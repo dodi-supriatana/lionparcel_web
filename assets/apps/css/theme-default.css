@@ -373,7 +373,7 @@ body.page-container-boxed .page-container {
   content: "\f147";
 }
 .x-navigation li.active > a {
-  background: #1caf9a;
+  background: #f81a04;
   color:#fff;
   -webkit-transition: all 200ms ease;
   -moz-transition: all 200ms ease;
@@ -443,7 +443,7 @@ body.page-container-boxed .page-container {
 }
 .x-navigation.x-navigation-horizontal {
   height: 50px;
-  background: #1d2127;
+  background: #f81a04;
 }
 .x-navigation.x-navigation-horizontal .xn-logo a {
   border-bottom: 0px;
@@ -908,7 +908,7 @@ body.page-container-boxed .page-container {
  color: #FFF;
  height: 50px;
  text-align: center;
- background: #1caf9a;
+ background: #f81a04;
 }
 .x-navigation > li.xn-logo > a:first-child:hover {
   background-color: #1caf9a;

@@ -1,320 +1,359 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title> STP BAST ONLINE </title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- #CSS Links -->
-    <!-- Basic Styles -->
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/font-awesome.min.css') ?>">
-    <!-- SmartAdmin Styles : Caution! DO NOT change the order -->
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/smartadmin-production-plugins.min.css') ?>">
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/smartadmin-production.min.css') ?>">
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/smartadmin-skins.min.css') ?>">
-    <!-- SmartAdmin RTL Support -->
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/smartadmin-rtl.min.css') ?>">
-    <!-- We recommend you use "your_style.css" to override SmartAdmin
-         specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-         <link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
-    <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
-    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url('assets/css/demo.min.css') ?>">
-    <!-- #FAVICONS -->
-    <link rel="shortcut icon" href="<?php echo base_url('assets/img/login/spt_logo1.png') ?>" type="image/x-icon">
-    <link rel="icon" href="<?php echo base_url('assets/img/login/spt_logo1.png') ?>" type="image/x-icon">
-    <!-- #GOOGLE FONT -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+    <!-- META SECTION -->
+    <title>Lionparcel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="<?php echo base_url('assets/icon/lion-parcel-logo.png') ?>" type="image/x-icon" />
+    <!-- END META SECTION -->
+
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="<?php echo base_url('assets/apps/css/theme-default.css') ?>" />
+    <!-- EOF CSS INCLUDE -->
 </head>
 
-<body class="desktop-detected pace-done">
-    <!-- #HEADER -->
-    <header id="header" style="background: Black;">
-        <div id="logo-group">
-            <!-- PLACE YOUR LOGO HERE -->
-            <span id="logo"> <img src="<?php echo base_url('assets/img/login/spt_logo2.png') ?>" style="margin-top: -14px;;height: 46px;" alt="SmartAdmin"> </span>
-            <!-- END LOGO PLACEHOLDER -->
-            <!-- Note: The activity badge color changes when clicked and resets the number to 0
-               Suggestion: You may want to set a flag when this happens to tick off all checked messages / notifications -->
-            <span id="activity" class="activity-dropdown" style="display:none"> <i class="fa fa-user"></i> <b class="badge"> 21 </b> </span>
-            <!-- AJAX-DROPDOWN : control this dropdown height, look and feel from the LESS variable file -->
-            <div class="ajax-dropdown">
-                <!-- the ID links are fetched via AJAX to the ajax container "ajax-notifications" -->
-                <div class="btn-group btn-group-justified" data-toggle="buttons">
-                    <label class="btn btn-default">
-                        <input type="radio" name="activity" id="<?php echo base_url('assets/ajax/notify/mail.html') ?>">
-                        Msgs (14) </label>
-                    <label class="btn btn-default">
-                        <input type="radio" name="activity" id="<?php echo base_url('assets/ajax/notify/notifications.html') ?>">
-                        notify (3) </label>
-                    <label class="btn btn-default">
-                        <input type="radio" name="activity" id="<?php echo base_url('assets/ajax/notify/tasks.html') ?>">
-                        Tasks (4) </label>
-                </div>
-                <!-- notification content -->
-                <div class="ajax-notifications custom-scroll">
-                    <div class="alert alert-transparent">
-                        <h4>Click a button to show messages here</h4>
-                        This blank page message helps protect your privacy, or you can show the first message here automatically.
-                    </div>
-                    <i class="fa fa-lock fa-4x fa-border"></i>
-                </div>
-                <!-- end notification content -->
-                <!-- footer: refresh area -->
-                <span> Last updated on: 12/12/2013 9:43AM
-                    <button type="button" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Loading..." class="btn btn-xs btn-default pull-right">
-                        <i class="fa fa-refresh"></i>
-                    </button> </span>
-                <!-- end footer -->
-            </div>
-            <!-- END AJAX-DROPDOWN -->
-        </div>
-        <!-- #PROJECTS: projects dropdown -->
-        <div class="project-context hidden-xs" style="display:none">
-            <span class="label">Projects:</span>
-            <span class="project-selector dropdown-toggle" data-toggle="dropdown">Recent projects <i class="fa fa-angle-down"></i></span>
-            <!-- Suggestion: populate this list with fetch and push technique -->
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="javascript:void(0);">TESTOnline e-merchant management system - attaching integration with the iOS</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Notes on pipeline upgradee</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Assesment Report for merchant account</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
-                </li>
-            </ul>
-            <!-- end dropdown-menu-->
-        </div>
-        <!-- end projects dropdown -->
-        <!-- #TOGGLE LAYOUT BUTTONS -->
-        <!-- pulled right: nav area -->
-        <div class="pull-right">
-            <!-- collapse menu button -->
-            <div id="hide-menu" class="btn-header pull-right">
-                <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
-            </div>
-            <!-- end collapse menu -->
-            <!-- #MOBILE -->
-            <!-- Top menu profile link : this shows only when top menu is active -->
-            <ul id="mobile-profile-img" class="header-dropdown-list hidden-xs padding-5">
-                <li class="">
-                    <a href="#" class="dropdown-toggle no-margin userdropdown" data-toggle="dropdown">
-                        <img src="<?php echo base_url('assets/img/avatars/sunny.png') ?>" alt="John Doe" class="online" />
+<body>
+    <!-- START PAGE CONTAINER -->
+    <div class="page-container">
+
+        <!-- START PAGE SIDEBAR -->
+        <div class="page-sidebar">
+            <!-- START X-NAVIGATION -->
+            <ul class="x-navigation">
+                <li class="xn-logo">
+                    <a href="<?php echo base_url('dashboard') ?>">
+                        <img class="h100" src="<?php echo base_url('assets/icon/logonew.png') ?>" alt="" style="height: 40px;margin-top: -9px;width: 90%;">
                     </a>
-                    <ul class="dropdown-menu pull-right">
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0"><i class="fa fa-cog"></i> Setting</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="profile.html" class="padding-10 padding-top-0 padding-bottom-0"> <i class="fa fa-user"></i> <u>P</u>rofile</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="toggleShortcut"><i class="fa fa-arrow-down"></i> <u>S</u>hortcut</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="javascript:void(0);" class="padding-10 padding-top-0 padding-bottom-0" data-action="launchFullscreen"><i class="fa fa-arrows-alt"></i> Full <u>S</u>creen</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="login.html" class="padding-10 padding-top-5 padding-bottom-5" data-action="userLogout"><i class="fa fa-sign-out fa-lg"></i> <strong><u>L</u>ogout</strong></a>
-                        </li>
-                    </ul>
                 </li>
-            </ul>
-            <!-- logout button -->
-            <div id="logout" class="btn-header transparent pull-right">
-                <span> <a href="<?php echo base_url('login') ?>" title="Sign Out" data-action="userLogout" data-logout-msg="are you sure want to logout"><i class="fa fa-sign-out"></i></a> </span>
-            </div>
-            <!-- end logout button -->
-            <!-- search mobile button (this is hidden till mobile view port) -->
-            <div id="search-mobile" class="btn-header transparent pull-right">
-                <span> <a href="javascript:void(0)" title="Search"><i class="fa fa-search"></i></a> </span>
-            </div>
-            <!-- end search mobile button -->
-            <!-- #SEARCH -->
-            <!-- input: search field -->
-            <form action="search.html" class="header-search pull-right">
-                <input id="search-fld" type="text" name="param" placeholder="Find reports and more">
-                <button type="submit">
-                    <i class="fa fa-search"></i>
-                </button>
-                <a href="javascript:void(0);" id="cancel-search-js" title="Cancel Search"><i class="fa fa-times"></i></a>
-            </form>
-            <!-- end input: search field -->
-            <!-- fullscreen button -->
-            <div id="fullscreen" class="btn-header transparent pull-right">
-                <span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
-            </div>
-            <!-- end fullscreen button -->
-            <!-- #Voice Command: Start Speech -->
-            <div id="speech-btn" class="btn-header transparent pull-right hidden-sm hidden-xs">
-                <div>
-                    <a href="javascript:void(0)" title="Voice Command" data-action="voiceCommand"><i class="fa fa-microphone"></i></a>
-                    <div class="popover bottom">
-                        <div class="arrow"></div>
-                        <div class="popover-content">
-                            <h4 class="vc-title">Voice command activated <br><small>Please speak clearly into the mic</small></h4>
-                            <h4 class="vc-title-error text-center">
-                                <i class="fa fa-microphone-slash"></i> Voice command failed
-                                <br><small class="txt-color-red">Must <strong>"Allow"</strong> Microphone</small>
-                                <br><small class="txt-color-red">Must have <strong>Internet Connection</strong></small>
-                            </h4>
-                            <a href="javascript:void(0);" class="btn btn-success" onclick="commands.help()">See Commands</a>
-                            <a href="javascript:void(0);" class="btn bg-color-purple txt-color-white" onclick="$('#speech-btn .popover').fadeOut(50);">Close Popup</a>
+                <li class="xn-profile">
+                    <a href="#" class="profile-mini">
+                        <img src="<?php echo base_url('assets/apps/assets/images/users/avatar.jpg') ?>" alt="John Doe" />
+                    </a>
+                    <div class="profile">
+                        <div class="profile-image">
+                            <img src="<?php echo base_url('assets/apps/assets/images/users/avatar.jpg') ?>" alt="John Doe" />
+                        </div>
+                        <div class="profile-data">
+                            <div class="profile-data-name">John Doe</div>
+                            <div class="profile-data-title">Web Developer/Designer</div>
+                        </div>
+                        <div class="profile-controls">
+                            <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
+                            <a href="pages-messages.html" class="profile-control-right"><span class="fa fa-envelope"></span></a>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- end voice command -->
-            <!-- multiple lang dropdown : find all flags in the flags page -->
-            <ul class="header-dropdown-list hidden-xs" style="display:none">
-                <li>
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-us" alt="United States"> <span> English (US) </span> <i class="fa fa-angle-down"></i> </a>
-                    <ul class="dropdown-menu pull-right">
-                        <li class="active">
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-us" alt="United States"> English (US)</a>
+                </li>
+                <li class="xn-title">Navigation</li>
+                <li class="active">
+                    <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Pages</span></a>
+                    <ul>
+                        <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Gallery</a></li>
+                        <li><a href="pages-profile.html"><span class="fa fa-user"></span> Profile</a></li>
+                        <li><a href="pages-address-book.html"><span class="fa fa-users"></span> Address Book</a></li>
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-clock-o"></span> Timeline</a>
+                            <ul>
+                                <li><a href="pages-timeline.html"><span class="fa fa-align-center"></span> Default</a></li>
+                                <li><a href="pages-timeline-simple.html"><span class="fa fa-align-justify"></span> Full Width</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-fr" alt="France"> Français</a>
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-envelope"></span> Mailbox</a>
+                            <ul>
+                                <li><a href="pages-mailbox-inbox.html"><span class="fa fa-inbox"></span> Inbox</a></li>
+                                <li><a href="pages-mailbox-message.html"><span class="fa fa-file-text"></span> Message</a></li>
+                                <li><a href="pages-mailbox-compose.html"><span class="fa fa-pencil"></span> Compose</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-es" alt="Spanish"> Español</a>
+                        <li><a href="pages-messages.html"><span class="fa fa-comments"></span> Messages</a></li>
+                        <li><a href="pages-calendar.html"><span class="fa fa-calendar"></span> Calendar</a></li>
+                        <li><a href="pages-tasks.html"><span class="fa fa-edit"></span> Tasks</a></li>
+                        <li><a href="pages-content-table.html"><span class="fa fa-columns"></span> Content Table</a></li>
+                        <li><a href="pages-faq.html"><span class="fa fa-question-circle"></span> FAQ</a></li>
+                        <li><a href="pages-search.html"><span class="fa fa-search"></span> Search</a></li>
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-file"></span> Blog</a>
+
+                            <ul>
+                                <li><a href="pages-blog-list.html"><span class="fa fa-copy"></span> List of Posts</a></li>
+                                <li><a href="pages-blog-post.html"><span class="fa fa-file-o"></span>Single Post</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-de" alt="German"> Deutsch</a>
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-sign-in"></span> Login</a>
+                            <ul>
+                                <li><a href="pages-login.html">App Login</a></li>
+                                <li><a href="pages-login-website.html">Website Login</a></li>
+                                <li><a href="pages-login-website-light.html"> Website Login Light</a></li>
+                            </ul>
                         </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-jp" alt="Japan"> 日本語</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-cn" alt="China"> 中文</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-it" alt="Italy"> Italiano</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-pt" alt="Portugal"> Portugal</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-ru" alt="Russia"> Русский язык</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);"><img src="<?php echo base_url('assets/img/blank.gif') ?>" class="flag flag-kr" alt="Korea"> 한국어</a>
+                        <li class="xn-openable">
+                            <a href="#"><span class="fa fa-warning"></span> Error Pages</a>
+                            <ul>
+                                <li><a href="pages-error-404.html">Error 404 Sample 1</a></li>
+                                <li><a href="pages-error-404-2.html">Error 404 Sample 2</a></li>
+                                <li><a href="pages-error-500.html"> Error 500</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
-            </ul>
-            <!-- end multiple lang -->
-        </div>
-        <!-- end pulled right: nav area -->
-    </header>
-    <!-- END HEADER -->
-    <!-- #NAVIGATION -->
-    <!-- Left panel : Navigation area -->
-    <!-- Note: This width of the aside area can be adjusted through LESS variables -->
-    <aside id="left-panel" style="background: #c50202;">
-        <!-- User info -->
-        <div class="login-info">
-            <span>
-                <!-- User image size is adjusted inside CSS, it should stay as it -->
-                <a href="javascript:void(0);" id="show-shortcut" data-action="toggleShortcut">
-                    <?php if ($_SESSION['picture'] == "") { ?>
-                        <img src="<?php echo base_url('assets/img/avatars/sunny.png') ?>" alt="me" class="online" />
-                    <?php } else { ?>
-                        <img src="<?php echo base_url($_SESSION['picture']) ?>" alt="me" class="online" />
-                    <?php } ?>
-                    <span>
-                        <?php echo $_SESSION['username'] ?>
-                    </span>
-                    <i class="fa fa-angle-down"></i>
-                </a>
-            </span>
-        </div>
-        <!-- end user info -->
-        <nav>
-            <!-- 
-                   NOTE: Notice the gaps after each icon usage <i></i>..
-                   Please note that these links work a bit different than
-                   traditional href="" links. See documentation for details.
-                   -->
-            <ul>
-                <?php foreach ($menu as $list) { ?>
-                    <li>
-                        <?php if ($list->parent_id == 0) { ?>
-                            <a href="<?php echo $list->ctrl_menu ?>"><i class="<?php echo $list->icon ?>"></i> <span class="menu-item-parent"><?php echo $list->permission_name ?></span></a>
-                            <?php
-                            if ($list->ctrl_menu == '#') {
-                                echo "<ul>";
-                            }
-                        } ?>
-
-
-
-                        <?php foreach ($menu as $sub) {
-                            if ($list->menu_id == $sub->parent_id) { ?>
-
-                            <li>
-                                <a href="<?php echo $sub->ctrl_menu ?>" title="<?php
-                                                                                ?>"><i class="<?php echo $sub->icon ?>"></i> <span class="menu-item-parent"><?php echo $sub->permission_name; ?></span></a>
-                            </li>
-
-                        <?php
-                    }
-                } ?>
-                    <?php if ($list->ctrl_menu == '#') {
-                        echo "</ul>";
-                    } ?>
-                    </li>
-                <?php
-            } ?>
-            </ul>
-        </nav>
-        <span class="minifyme" data-action="minifyMenu" style="display:none">
-            <i class="fa fa-arrow-circle-left hit"></i>
-        </span>
-    </aside>
-    <!-- END NAVIGATION -->
-    <!-- MAIN PANEL -->
-    <div id="main" role="main">
-        <!-- RIBBON -->
-        <div id="ribbon" style="background: white;">
-            <span class="ribbon-button-alignment">
-                <span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh" rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This settings will syc your data to SAP." data-html="true">
-                    <i class="fa fa-refresh"></i>
-                </span>
-            </span>
-            <!-- breadcrumb -->
-            <ol class="breadcrumb">
-                <!-- <li>Home</li> -->
-                <!-- <li>Miscellaneous</li> -->
-                <li>
-                    <!-- <div id="clockDisplay" style="padding:6px;color:#C09853;font-family:'arial black';font-size:12px;font-weight:bold;letter-spacing:2px;display:inline;"> -->
-                    <div style="padding:6px;color:#000000;font-family:'arial black';font-size:12px;font-weight:bold;letter-spacing:2px;display:inline;">PO Last update on <?php echo date("d M Y H:i");; ?> </div>
-
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Layouts</span></a>
+                    <ul>
+                        <li><a href="layout-boxed.html">Boxed</a></li>
+                        <li><a href="layout-nav-toggled.html">Navigation Toggled</a></li>
+                        <li><a href="layout-nav-top.html">Navigation Top</a></li>
+                        <li><a href="layout-nav-right.html">Navigation Right</a></li>
+                        <li><a href="layout-nav-top-fixed.html">Top Navigation Fixed</a></li>
+                        <li><a href="layout-nav-custom.html">Custom Navigation</a></li>
+                        <li><a href="layout-frame-left.html">Frame Left Column</a></li>
+                        <li><a href="layout-frame-right.html">Frame Right Column</a></li>
+                        <li><a href="layout-search-left.html">Search Left Side</a></li>
+                        <li><a href="blank.html">Blank Page</a></li>
+                    </ul>
                 </li>
-            </ol>
+                <li class="xn-title">Components</li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">UI Kits</span></a>
+                    <ul>
+                        <li><a href="ui-widgets.html"><span class="fa fa-heart"></span> Widgets</a></li>
+                        <li><a href="ui-elements.html"><span class="fa fa-cogs"></span> Elements</a></li>
+                        <li><a href="ui-buttons.html"><span class="fa fa-square-o"></span> Buttons</a></li>
+                        <li><a href="ui-panels.html"><span class="fa fa-pencil-square-o"></span> Panels</a></li>
+                        <li><a href="ui-icons.html"><span class="fa fa-magic"></span> Icons</a>
+                            <div class="informer informer-warning">+679</div>
+                        </li>
+                        <li><a href="ui-typography.html"><span class="fa fa-pencil"></span> Typography</a></li>
+                        <li><a href="ui-portlet.html"><span class="fa fa-th"></span> Portlet</a></li>
+                        <li><a href="ui-sliders.html"><span class="fa fa-arrows-h"></span> Sliders</a></li>
+                        <li><a href="ui-alerts-popups.html"><span class="fa fa-warning"></span> Alerts & Popups</a></li>
+                        <li><a href="ui-lists.html"><span class="fa fa-list-ul"></span> Lists</a></li>
+                        <li><a href="ui-tour.html"><span class="fa fa-random"></span> Tour</a></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-pencil"></span> <span class="xn-text">Forms</span></a>
+                    <ul>
+                        <li>
+                            <a href="form-layouts-two-column.html"><span class="fa fa-tasks"></span> Form Layouts</a>
+                            <div class="informer informer-danger">New</div>
+                            <ul>
+                                <li><a href="form-layouts-one-column.html"><span class="fa fa-align-justify"></span> One Column</a></li>
+                                <li><a href="form-layouts-two-column.html"><span class="fa fa-th-large"></span> Two Column</a></li>
+                                <li><a href="form-layouts-tabbed.html"><span class="fa fa-table"></span> Tabbed</a></li>
+                                <li><a href="form-layouts-separated.html"><span class="fa fa-th-list"></span> Separated Rows</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="form-elements.html"><span class="fa fa-file-text-o"></span> Elements</a></li>
+                        <li><a href="form-validation.html"><span class="fa fa-list-alt"></span> Validation</a></li>
+                        <li><a href="form-wizards.html"><span class="fa fa-arrow-right"></span> Wizards</a></li>
+                        <li><a href="form-editors.html"><span class="fa fa-text-width"></span> WYSIWYG Editors</a></li>
+                        <li><a href="form-file-handling.html"><span class="fa fa-floppy-o"></span> File Handling</a></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="tables.html"><span class="fa fa-table"></span> <span class="xn-text">Tables</span></a>
+                    <ul>
+                        <li><a href="table-basic.html"><span class="fa fa-align-justify"></span> Basic</a></li>
+                        <li><a href="table-datatables.html"><span class="fa fa-sort-alpha-desc"></span> Data Tables</a></li>
+                        <li><a href="table-export.html"><span class="fa fa-download"></span> Export Tables</a></li>
+                    </ul>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-bar-chart-o"></span> <span class="xn-text">Charts</span></a>
+                    <ul>
+                        <li><a href="charts-morris.html"><span class="xn-text">Morris</span></a></li>
+                        <li><a href="charts-nvd3.html"><span class="xn-text">NVD3</span></a></li>
+                        <li><a href="charts-rickshaw.html"><span class="xn-text">Rickshaw</span></a></li>
+                        <li><a href="charts-other.html"><span class="xn-text">Other</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="maps.html"><span class="fa fa-map-marker"></span> <span class="xn-text">Maps</span></a>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-sitemap"></span> <span class="xn-text">Navigation Levels</span></a>
+                    <ul>
+                        <li class="xn-openable">
+                            <a href="#">Second Level</a>
+                            <ul>
+                                <li class="xn-openable">
+                                    <a href="#">Third Level</a>
+                                    <ul>
+                                        <li class="xn-openable">
+                                            <a href="#">Fourth Level</a>
+                                            <ul>
+                                                <li><a href="#">Fifth Level</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
 
-            <!-- end breadcrumb -->
-            <!-- You can also add more buttons to the
-                ribbon for further usability
-            
-                Example below:
-            
-                <span class="ribbon-button-alignment pull-right">
-                <span id="search" class="btn btn-ribbon hidden-xs" data-title="search"><i class="fa-grid"></i> Change Grid</span>
-                <span id="add" class="btn btn-ribbon hidden-xs" data-title="add"><i class="fa-`plus`"></i> Add</span>
-                <span id="search" class="btn btn-ribbon" data-title="search"><i class="fa-search"></i> <span class="hidden-mobile">Search</span></span>
-                </span> -->
+            </ul>
+            <!-- END X-NAVIGATION -->
         </div>
-        <!-- END RIBBON -->
+        <!-- END PAGE SIDEBAR -->
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+
+            <!-- START X-NAVIGATION VERTICAL -->
+            <ul class="x-navigation x-navigation-horizontal x-navigation-panel">
+                <!-- TOGGLE NAVIGATION -->
+                <li class="xn-icon-button">
+                    <a href="#" class="x-navigation-minimize"><span class="fa fa-dedent"></span></a>
+                </li>
+                <!-- END TOGGLE NAVIGATION -->
+                <!-- SEARCH -->
+                <!-- <li class="xn-search">
+                    <form role="form">
+                        <input type="text" name="search" placeholder="Search..." />
+                    </form>
+                </li> -->
+                <!-- END SEARCH -->
+                <!-- SIGN OUT -->
+                <li class="xn-icon-button pull-right">
+                    <a href="#" class="mb-control" data-box="#mb-signout"><span class="fa fa-sign-out"></span></a>
+                </li>
+                <!-- END SIGN OUT -->
+                <!-- MESSAGES -->
+                <li class="xn-icon-button pull-right">
+                    <a href="#"><span class="fa fa-comments"></span></a>
+                    <div class="informer informer-danger">4</div>
+                    <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="fa fa-comments"></span> Messages</h3>
+                            <div class="pull-right">
+                                <span class="label label-danger">4 new</span>
+                            </div>
+                        </div>
+                        <div class="panel-body list-group list-group-contacts scroll" style="height: 200px;">
+                            <a href="#" class="list-group-item">
+                                <div class="list-group-status status-online"></div>
+                                <img src="assets/images/users/user2.jpg" class="pull-left" alt="John Doe" />
+                                <span class="contacts-title">John Doe</span>
+                                <p>Praesent placerat tellus id augue condimentum</p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <div class="list-group-status status-away"></div>
+                                <img src="assets/images/users/user.jpg" class="pull-left" alt="Dmitry Ivaniuk" />
+                                <span class="contacts-title">Dmitry Ivaniuk</span>
+                                <p>Donec risus sapien, sagittis et magna quis</p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <div class="list-group-status status-away"></div>
+                                <img src="assets/images/users/user3.jpg" class="pull-left" alt="Nadia Ali" />
+                                <span class="contacts-title">Nadia Ali</span>
+                                <p>Mauris vel eros ut nunc rhoncus cursus sed</p>
+                            </a>
+                            <a href="#" class="list-group-item">
+                                <div class="list-group-status status-offline"></div>
+                                <img src="assets/images/users/user6.jpg" class="pull-left" alt="Darth Vader" />
+                                <span class="contacts-title">Darth Vader</span>
+                                <p>I want my money back!</p>
+                            </a>
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="pages-messages.html">Show all messages</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END MESSAGES -->
+                <!-- TASKS -->
+                <li class="xn-icon-button pull-right">
+                    <a href="#"><span class="fa fa-tasks"></span></a>
+                    <div class="informer informer-warning">3</div>
+                    <div class="panel panel-primary animated zoomIn xn-drop-left xn-panel-dragging">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="fa fa-tasks"></span> Tasks</h3>
+                            <div class="pull-right">
+                                <span class="label label-warning">3 active</span>
+                            </div>
+                        </div>
+                        <div class="panel-body list-group scroll" style="height: 200px;">
+                            <a class="list-group-item" href="#">
+                                <strong>Phasellus augue arcu, elementum</strong>
+                                <div class="progress progress-small progress-striped active">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                                </div>
+                                <small class="text-muted">John Doe, 25 Sep 2014 / 50%</small>
+                            </a>
+                            <a class="list-group-item" href="#">
+                                <strong>Aenean ac cursus</strong>
+                                <div class="progress progress-small progress-striped active">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">80%</div>
+                                </div>
+                                <small class="text-muted">Dmitry Ivaniuk, 24 Sep 2014 / 80%</small>
+                            </a>
+                            <a class="list-group-item" href="#">
+                                <strong>Lorem ipsum dolor</strong>
+                                <div class="progress progress-small progress-striped active">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">95%</div>
+                                </div>
+                                <small class="text-muted">John Doe, 23 Sep 2014 / 95%</small>
+                            </a>
+                            <a class="list-group-item" href="#">
+                                <strong>Cras suscipit ac quam at tincidunt.</strong>
+                                <div class="progress progress-small">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>
+                                </div>
+                                <small class="text-muted">John Doe, 21 Sep 2014 /</small><small class="text-success"> Done</small>
+                            </a>
+                        </div>
+                        <div class="panel-footer text-center">
+                            <a href="pages-tasks.html">Show all tasks</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- END TASKS -->
+            </ul>
+            <!-- END X-NAVIGATION VERTICAL -->
+
+            <!-- START BREADCRUMB -->
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Dashboard</li>
+            </ul>
+            <!-- END BREADCRUMB -->
+
+            <!-- PAGE CONTENT WRAPPER -->
+            <div class="page-content-wrap">
+
+
+
+            </div>
+            <!-- END PAGE CONTENT WRAPPER -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+    <!-- END PAGE CONTAINER -->
+
+    <!-- MESSAGE BOX-->
+    <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
+        <div class="mb-container">
+            <div class="mb-middle">
+                <div class="mb-title"><span class="fa fa-sign-out"></span> Log <strong>Out</strong> ?</div>
+                <div class="mb-content">
+                    <p>Are you sure you want to log out?</p>
+                    <p>Press No if youwant to continue work. Press Yes to logout current user.</p>
+                </div>
+                <div class="mb-footer">
+                    <div class="pull-right">
+                        <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                        <button class="btn btn-default btn-lg mb-control-close">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

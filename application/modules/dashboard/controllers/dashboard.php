@@ -16,10 +16,11 @@ class dashboard extends MX_Controller
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
-		echo "dashboard";
+		$this->load->view('layout/header');
+		// echo "dashboard";
 		// die();
 		// $this->load->view('main');
-		// $this->load->view('layout/footer', $script);
+		$this->load->view('layout/footer', $script);
 	}
 
 
