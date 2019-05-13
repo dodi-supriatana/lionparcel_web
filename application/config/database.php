@@ -78,7 +78,7 @@ $db['default'] = array(
 	'hostname' => '103.103.192.212',
 	'username' => 'develop',
 	'password' => 'D3v3l0p3r',
-	'database' => 'stp_ver2',
+	'database' => 'lionparcel',
 
 	// 'hostname' => 'localhost',
 	// 'username' => 'root',
