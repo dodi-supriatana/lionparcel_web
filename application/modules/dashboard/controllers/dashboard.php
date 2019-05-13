@@ -19,7 +19,7 @@ class dashboard extends MX_Controller
 		$this->load->view('layout/header');
 		// echo "dashboard";
 		// die();
-		// $this->load->view('main');
+		$this->load->view('main');
 		$this->load->view('layout/footer', $script);
 	}
 

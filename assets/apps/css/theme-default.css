@@ -444,6 +444,7 @@ body.page-container-boxed .page-container {
 .x-navigation.x-navigation-horizontal {
   height: 50px;
   background: #f81a04;
+  /* position: fixed; */
 }
 .x-navigation.x-navigation-horizontal .xn-logo a {
   border-bottom: 0px;

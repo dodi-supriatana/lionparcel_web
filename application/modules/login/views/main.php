@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/iCheck/square/blue.css">
 
   <link rel="stylesheet" href="<?php echo base_url();?>assets/assets-login/fonts/material-icon/css/material-design-iconic-font.min.css">
+  <link rel="icon" href="<?php echo base_url('assets/icon/lion-parcel-logo.png') ?>" type="image/x-icon" />
 
     <!-- Main css -->
     <link rel="stylesheet" href="<?php echo base_url();?>assets/assets-login/css/style.css">
