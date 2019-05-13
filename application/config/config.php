@@ -23,7 +23,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://lionparcel.cudo.co.id/';
+// $config['base_url'] = 'http://lionparcel.cudo.co.id/';
+$config['base_url'] = 'http://localhost/lionparcel_web/';
+
 // $config['base_url'] = 'http://stp.cudo.co.id/';
 
 
