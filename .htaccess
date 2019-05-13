@@ -14,7 +14,7 @@
 
 
 RewriteEngine on
-RewriteBase /lionparcel_web
+RewriteBase /
 #RewriteBase /
 
  
