@@ -73,7 +73,18 @@
                     <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Agent</span></a>
                     <ul>
                         <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Agent List</a></li>
+                        <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Agent Performance</a></li>
                         <li><a href="pages-profile.html"><span class="fa fa-user"></span> Agent Registration</a></li>
+                    </ul>
+
+                </li>
+
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">CMS Setting</span></a>
+                    <ul>
+                        <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Promo</a></li>
+                        <li><a href="pages-profile.html"><span class="fa fa-user"></span> Client</a></li>
+                        <li><a href="pages-profile.html"><span class="fa fa-tablet"></span> On Boarding</a></li>
                     </ul>
 
                 </li>
