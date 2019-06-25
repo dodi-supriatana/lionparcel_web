@@ -1,4 +1,7 @@
 		<!-- Banner================================================== -->
+		
+
+		
 		<div class="main-search-container centered" data-background-image="assets/leandingpage/images/lion_man.png">
 			<div class="main-search-inner">
 
@@ -16,14 +19,15 @@
 
 
 								<div class="main-search-input-item">
-									<select name="userId" id="userId" data-source="https://jsonplaceholder.typicode.com/users" data-valueKey="id" data-displayKey="name" class="chosen-select" data-placeholder="Asal" style="display: none;">
+									<!-- <select name="asal"  data-placeholder="Asal" > -->
+									<select class="itemName form-control" name="origin"></select>
 										<!-- Hours added via JS (this is only for demo purpose) -->
 									</select>
 
 
 								</div>
 								<div class="main-search-input-item">
-									<select class="chosen-select" data-placeholder="Tujuan" style="display: none;">
+								<select class="itemName form-control" name="destination"></select>
 										<!-- Hours added via JS (this is only for demo purpose) -->
 										<option></option>
 
@@ -271,3 +275,23 @@
 			<!-- Logo Carousel / End -->
 		</section>
 		<!-- client List / End-->
+
+
+
+		
+<script type="text/javascript">
+      $('.itemName').select2({
+        placeholder: '--- Select Item ---',
+        ajax: {
+          url: '<?php echo base_url('leanding/getcity') ?>',
+          dataType: 'json',
+          delay: 250,
+          processResults: function (data) {
+            return {
+              results: data
+            };
+          },
+          cache: true
+        }
+      });
+</script>
