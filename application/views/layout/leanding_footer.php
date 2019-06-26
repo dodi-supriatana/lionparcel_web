@@ -103,7 +103,7 @@
 <script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/markerclusterer.js') ?>"></script>
 <script type="text/javascript">
     var infoBox_ratingType = 'star-rating';
-    (function($) {
+    if(function($) {
         "use strict";
 
         function mainMap() {
@@ -127,15 +127,9 @@
             }
             var locations = [
                 // ini di looping
-                [locationData('listings-single-page.html', 'images/listing-item-01.jpg', "Tom's Restaurant", '964 School Street, New York', '3.5', '12'), -6.175110, 106.865036, 2, '<i class="im im-icon-Home-5"></i>'],
-                [locationData('listings-single-page.html', 'images/listing-item-02.jpg', 'Sticky Band', 'Bishop Avenue, New York', '5.0', '23'), -6.917464, 107.619125, 2, '<i class="im im-icon-Home-5"></i>'],
-                [locationData('listings-single-page.html', 'images/listing-item-03.jpg', 'Hotel Govendor', '778 Country Street, New York', '2.0', '17'), 40.7427837, -73.11445617675781, 3, '<i class="im im-icon-Home-2"></i>'],
-                [locationData('listings-single-page.html', 'images/listing-item-04.jpg', 'Burger House', '2726 Shinn Street, New York', '5.0', '31'), 40.70437865245596, -73.98674011230469, 4, '<i class="im im-icon-Hamburger"></i>'],
-                [locationData('listings-single-page.html', 'images/listing-item-05.jpg', 'Airport', '1512 Duncan Avenue, New York', '3.5', '46'), 40.641311, -73.778139, 5, '<i class="im im-icon-Plane"></i>'],
-                [locationData('listings-single-page.html', 'images/listing-item-06.jpg', 'Think Coffee', '215 Terry Lane, New York', '4.5', '15'), 41.080938, -73.535957, 6, '<i class="im im-icon-Coffee"></i>'],
-                [locationData('listings-single-page.html', 'images/listing-item-04.jpg', 'Burger House', '2726 Shinn Street, New York', '5.0', '31'), 41.079386, -73.519478, 7, '<i class="im im-icon-Hamburger"></i>'],
-                [locationData('listings-single-page.html', 'images/listing-item-04.jpg', 'Burger House', '2726 Shinn Street, New York', '5.0', '31'), 52.368630, 4.895782, 7, '<i class="im im-icon-Hamburger"></i>'],
-                [locationData('listings-single-page.html', 'images/listing-item-04.jpg', 'Burger House', '2726 Shinn Street, New York', '5.0', '31'), 52.350179, 4.634857, 7, '<i class="im im-icon-Hamburger"></i>'],
+                <?php foreach ($maps as $data) { ?>
+                    [locationData('listings-single-page.html', 'images/listing-item-01.jpg', "Tom's Restaurant", '964 School Street, New York', '3.5', '12'), <?php echo $data->latitude ?>, <?php echo $data->longitude ?>, 2, '<i class="im im-icon-Home-5"></i>'],
+                <?php } ?>
             ];
             google.maps.event.addListener(ib, 'domready', function() {
                 if (infoBox_ratingType = 'numerical-rating') {
@@ -160,7 +154,7 @@
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: zoomLevel,
                 scrollwheel: scrollEnabled,
-                center: new google.maps.LatLng(-5.406844, 119.715391),
+                center: new google.maps.LatLng(<?php echo $lat ?>, <?php echo $lng ?>),
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 zoomControl: false,
                 mapTypeControl: false,

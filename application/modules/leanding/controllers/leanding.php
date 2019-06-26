@@ -26,10 +26,42 @@ class leanding extends MX_Controller
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
-
+		$data['maps']="";
 		// $data['city']=$this->Mleanding->get_city();
 		$this->load->view('layout/leanding_header');
 		$this->load->view('main');
+		$this->load->view('layout/leanding_footer', $script);
+	}
+
+
+	public function cektarif()
+	{
+		$script = array(
+			'script' => TRUE,
+			'script_url' => 'main_script'
+		);
+
+
+		$origin = $this->input->post('origin');
+		$destinance = $this->input->post('destination');
+		$weight = $this->input->post('kg');
+		$data['harga'] = $this->db->query("SELECT
+        rt.rate_id,
+            rt.origin_3lc,
+            rt.origin_city as dari,
+            rt.destination_city AS ke,
+            rt.product,
+            date_format(created_date,' %d %M %Y')  as last_update,
+            total * " . $weight . "  as final_price
+        FROM
+            rate_tabel rt 
+        WHERE
+            rt.origin_3lc = '" . $origin . "' 
+			AND rt.destination_3lc = '" . $destinance . "'")->result();
+		// print_r($data);
+
+		$this->load->view('layout/leanding_header');
+		$this->load->view('cektarif', $data);
 		$this->load->view('layout/leanding_footer', $script);
 	}
 
@@ -68,16 +100,156 @@ class leanding extends MX_Controller
 		echo json_encode($json);
 	}
 
+	public function get_lat_long()
+    {
+		// $getloc = json_decode(file_get_contents("http://ipinfo.io/"));
+		// $my_location= $getloc->loc; //to get city
+		// $data = explode(',', $my_location);
+		// $lat = $data[0];
+		// $long = $data[1];
+
+		// echo $long;
+		// die();
+		
+		$script = array(
+			'script' => TRUE,
+			'script_url' => 'main_script'
+		);
+		$address = $this->input->post('address');
+		
+		// die($address);
+        $geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&key=AIzaSyCfY9TPZ31i6nu-oTLQWjuHaIt5dbc86o4&sensor=false');
+		$output = json_decode($geocode);
+        $lat = @$output->results[0]->geometry->location->lat;
+        $lng = @$output->results[0]->geometry->location->lng;
+
+        if (!empty($lat) or !empty($lng)) {
+
+            $query = $this->db->query("SELECT tabel_agen.*, 
+                    (6371 * acos(cos(radians(" . $lat . ")) 
+                    * cos(radians(latitude)) * cos(radians(longitude) 
+                    - radians(" . $lng . ")) + sin(radians(" . $lat . ")) 
+                    * sin(radians(latitude)))) AS jarak 
+                    FROM tabel_agen 
+                    HAVING jarak < 10 ORDER BY jarak");
+
+            $data = array();
+            $lenght=$query->num_rows();
+            foreach ($query ->result() as $datas) {
+
+                $row = array(
+                    'id_agent' => $datas->id_agent,
+                    'nama_agent' => $datas->nama_agent,
+                    'alamat_agent' => $datas->alamat_agent,
+                    'jam_operasional' => $datas->jam_operasional,
+                    'no_telepon' => $datas->no_telepon,
+                    'foto_1' => $datas->foto_1,
+                    'foto_2' => $datas->foto_2,
+                    'foto_3' => $datas->foto_3,
+                    'latitude' => (float)$datas->latitude,
+                    'longitude' => (float)$datas->longitude,
+                    'status' => $datas->status,
+                    'jarak' => $datas->jarak,
+                    // 'latitude' => (float)$datas->latitude,
+
+                );
+                $data['maps'] = $row;
+            }
+        } else {
+            $data['maps'] = [];
+        }
+		
+		print_r($data['maps']);
+		die();
+
+		$this->load->view('layout/leanding_header');
+		$this->load->view('find', $data);
+		$this->load->view('layout/leanding_footer', $script);
+    }
+
 	public function tracking()
 	{
 		$script = array(
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
-
+		$data[]="";
+		if (!empty($this->input->post('sst_no'))) {
+			$stt_no = $this->input->post('sst_no');
+			$json = $this->get_tracking($stt_no);
+			$data['tracking']=json_decode($json);
+			// print_r($data['tracking']);
+			// die();
+		}
 		$this->load->view('layout/leanding_header');
-		$this->load->view('tracking');
+		$this->load->view('tracking', $data);
 		$this->load->view('layout/leanding_footer', $script);
+	}
+
+	public function get_tracking($stt_nos)
+	{
+		// die($stt_nos);
+
+		$sst_no = $stt_nos;
+		// die($sst_no);
+
+		if (strpos($sst_no, '-') !== false) {
+			$sst_no = $stt_nos;
+			// echo $sst_no;
+		} else {
+			$string = $stt_nos;
+			$replacement = '-';
+			$new_string = substr_replace($string, $replacement, 2, 0);
+			$sst_no = substr_replace($new_string, $replacement, 5, 0);
+			// echo $sst_no;
+		}
+		// die();
+
+		// die($new_string);
+		$username = "lionparcel";
+		$password = "lionparcel@123";
+		$remote_url = 'http://lpapi.cargoflash.com/v3/stt/track?q=' . $sst_no;
+
+		// Create a stream
+		$opts = array(
+			'http' => array(
+				'method' => "GET",
+				'header' => "Authorization: Basic " . base64_encode("$username:$password")
+			)
+		);
+
+		$context = stream_context_create($opts);
+
+		// Open the file using the HTTP headers set above
+		$json = file_get_contents($remote_url, false, $context);
+
+		// print($json);
+		$output = json_decode($json);
+		$panjang = @$output->stts[0]->history;
+		// $panjang_history=count($panjang);
+		$history = array();
+		$i = 0;
+		foreach ($panjang as $datas) {
+			$row = array(
+				"id" => @$output->stts[0]->history[$i]->row,
+				"title" => @$output->stts[0]->history[$i]->remarks . " " . @$output->stts[0]->history[$i]->city . " (" . @$output->stts[0]->history[$i]->location . ")",
+				"description" => substr(@$output->stts[0]->history[$i]->datetime, 0, 10) . " " . substr(@$output->stts[0]->history[$i]->datetime, 11, 8),
+			);
+			$history[] = $row;
+			$i++;
+		}
+		$data = array(
+			'no_resi' => @$output->stts[0]->stt_no,
+			"sender_name" => @$output->stts[0]->sender_name,
+			"reciver_name" => @$output->stts[0]->recipient_name,
+			"origin" => @$output->stts[0]->origin,
+			"destination" => @$output->stts[0]->destination,
+			"current_status" => @$output->stts[0]->current_status,
+			"berat" => @$output->stts[0]->chargeable_weight,
+			"history" => $history,
+		);
+
+		return json_encode($data);
 	}
 
 	public function find()
@@ -87,11 +259,72 @@ class leanding extends MX_Controller
 			'script_url' => 'main_script'
 		);
 
+		
+		$getloc = json_decode(file_get_contents("http://ipinfo.io/"));
+		$my_location= $getloc->loc; //to get city
+		$data = explode(',', $my_location);
+		$lat = $data[0];
+		$lng = $data[1];
 
+		// echo $long;
+		// die();
+		
+		$script = array(
+			'script' => TRUE,
+			'script_url' => 'main_script'
+		);
+		// $address = $this->input->post('address');
+		// // die($address);
+        // $geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&key=AIzaSyCfY9TPZ31i6nu-oTLQWjuHaIt5dbc86o4&sensor=false');
+		// die($geocode);
+		// $output = json_decode($geocode);
+        // $lat = @$output->results[0]->geometry->location->lat;
+        // $lng = @$output->results[0]->geometry->location->lng;
+
+        if (!empty($lat) or !empty($lng)) {
+
+            $query = $this->db->query("SELECT tabel_agen.*, 
+                    (6371 * acos(cos(radians(" . $lat . ")) 
+                    * cos(radians(latitude)) * cos(radians(longitude) 
+                    - radians(" . $lng . ")) + sin(radians(" . $lat . ")) 
+                    * sin(radians(latitude)))) AS jarak 
+                    FROM tabel_agen 
+                    HAVING jarak < 1.3 ORDER BY jarak");
+
+            $data = array();
+            $lenght=$query->num_rows();
+            foreach ($query ->result() as $datas) {
+
+                $row = array(
+                    'id_agent' => $datas->id_agent,
+                    'nama_agent' => $datas->nama_agent,
+                    'alamat_agent' => $datas->alamat_agent,
+                    'jam_operasional' => $datas->jam_operasional,
+                    'no_telepon' => $datas->no_telepon,
+                    'foto_1' => $datas->foto_1,
+                    'foto_2' => $datas->foto_2,
+                    'foto_3' => $datas->foto_3,
+                    'latitude' => (float)$datas->latitude,
+                    'longitude' => (float)$datas->longitude,
+                    'status' => $datas->status,
+                    'jarak' => $datas->jarak,
+                    // 'latitude' => (float)$datas->latitude,
+
+                );
+				$data['maps'] = $query->result();
+				$data['lat']=$lat;
+				$data['lng'] = $lng;
+            }
+        } else {
+            $data['maps'] = [];
+        }
+		
+		// print_r($data['maps']);
+		// die();
 
 		$this->load->view('layout/leanding_header');
-		$this->load->view('find');
-		$this->load->view('layout/leanding_footer', $script);
+		$this->load->view('find',$data);
+		$this->load->view('layout/leanding_footer', $data);
 	}
 
 	public function promo()

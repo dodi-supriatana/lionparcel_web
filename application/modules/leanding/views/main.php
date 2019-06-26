@@ -14,7 +14,7 @@
 								<span class="typed-words"></span>
 							</h2>
 							<!-- <h4>Expolore top-rated attractions, activities and more</h4> -->
-
+							<form action="<?php echo base_url('leanding/cektarif') ?>" method="post">
 							<div class="main-search-input">
 
 
@@ -36,11 +36,12 @@
 
 
 								<div class="main-search-input-item">
-									<input type="number" placeholder="Kg" min="1">
+									<input type="number" name="kg" placeholder="Kg" min="1">
 								</div>
-								<button class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+								<button type="submit" class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
 
 							</div>
+							</form>
 						</div>
 					</div>
 

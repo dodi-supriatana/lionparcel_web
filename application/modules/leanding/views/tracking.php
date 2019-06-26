@@ -1,5 +1,41 @@
 		<!-- Banner================================================== -->
-		<div class="main-search-container centered" data-background-image="assets/leandingpage/images/lion_man.png">
+
+		<style>
+			ul.timeline {
+				list-style-type: none;
+				position: relative;
+			}
+
+			ul.timeline:before {
+				content: ' ';
+				background: #47484891;
+				display: inline-block;
+				position: absolute;
+				left: 29px;
+				width: 2px;
+				height: 100%;
+				z-index: 400;
+			}
+
+			ul.timeline>li {
+				margin: 20px 0;
+				padding-left: 44px;
+			}
+
+			ul.timeline>li:before {
+				content: ' ';
+				background: white;
+				display: inline-block;
+				position: absolute;
+				border-radius: 50%;
+				border: 3px solid #ff0000;
+				left: 20px;
+				width: 20px;
+				height: 20px;
+				z-index: 400;
+			}
+		</style>
+		<div class="main-search-container centered" data-background-image="<?php echo base_url('assets/leandingpage/images/lion_man.png') ?>">
 			<div class="main-search-inner">
 
 				<div class="container">
@@ -11,65 +47,29 @@
 								<span class="typed-words"></span>
 							</h2>
 							<!-- <h4>Expolore top-rated attractions, activities and more</h4> -->
+							<form action="<?php echo base_url('leanding/tracking') ?>" method="post">
+								<div class="main-search-input">
 
-							<div class="main-search-input">
-
-
-								<div class="main-search-input-item">
-									<select name="userId" id="userId" data-source="https://jsonplaceholder.typicode.com/users" data-valueKey="id" data-displayKey="name" class="chosen-select" data-placeholder="Asal" style="display: none;">
-										<!-- Hours added via JS (this is only for demo purpose) -->
-									</select>
-
+									<div class="main-search-input-item location">
+										<div id="autocomplete-container">
+											<input type="text" placeholder="Input Your STT No" name="sst_no">
+										</div>
+										<a href="#"><i class="fa fa-map-marker"></i></a>
+									</div>
+									<button type="submit" class="button">Search</button>
 
 								</div>
-								<div class="main-search-input-item">
-									<select class="chosen-select" data-placeholder="Tujuan" style="display: none;">
-										<!-- Hours added via JS (this is only for demo purpose) -->
-										<option></option>
-
-									</select>
-								</div>
-
-
-								<div class="main-search-input-item">
-									<input type="number" placeholder="Kg" min="1">
-								</div>
-								<button class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
-
-							</div>
+							</form>
 						</div>
 					</div>
 
 					<!-- Features Categories -->
 					<div class="row">
 						<div class="col-md-12">
-							<h5 class="highlighted-categories-headline">Or browse featured categories:</h5>
+							<h4 class="highlighted-categories-headline">Get Mobile Apps</h4>
 
-							<div class="highlighted-categories">
-								<!-- Box -->
-								<a href="listings-list-with-sidebar.html" class="highlighted-category">
-									<i class="im im-icon-Home"></i>
-									<h4>Apartments</h4>
-								</a>
-
-								<!-- Box -->
-								<a href="listings-list-full-width.html" class="highlighted-category">
-									<i class="im im-icon-Hamburger"></i>
-									<h4>Eat &amp; Drink</h4>
-								</a>
-
-								<!-- Box -->
-								<a href="listings-half-screen-map-list.html" class="highlighted-category">
-									<i class="im im-icon-Electric-Guitar"></i>
-									<h4>Events</h4>
-								</a>
-
-								<!-- Box -->
-								<a href="listings-half-screen-map-list.html" class="highlighted-category">
-									<i class="im im-icon-Dumbbell"></i>
-									<h4>Fitness</h4>
-								</a>
-							</div>
+							<img src="<?php echo base_url('assets/leandingpage/images/download_play.png') ?>" style="width: 150px;">
+							<img src="<?php echo base_url('assets/leandingpage/images/download_app.png') ?>" style="width: 150px;">
 
 						</div>
 					</div>
@@ -82,196 +82,28 @@
 
 
 		<!-- Content================================================== -->
-		<div class="container">
+
+		<div class="container mt-5 mb-5">
 			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<h4 style="font-size: 20px;"><strong>Tracking Update</strong></h4>
+					<ul class="timeline">
+						<?php foreach ($tracking as $data) {
 
-				<div class="col-md-12">
-					<h3 class="headline centered margin-top-75">
-						Promo
-						<!-- <span>Browse <i>the most desirable</i> categories</span> -->
-					</h3>
+							if (is_array($data)) {
+								//  Scan through inner loop
+								foreach ($data as $value) { ?>
+									<li>
+										<strong><a style="color: #ff0000;font-size: 12px;"><?php echo $value->description ?></a></strong>
+										<!-- <a style="color: #4d4d4d;" class="float-right"><?php echo $value->description ?></a> -->
+										<p><?php echo $value->title ?></p>
+									</li>
+								<?php }
+						}
+					} ?>
+
+					</ul>
+
 				</div>
-
 			</div>
 		</div>
-
-
-		<!-- promo Carousel -->
-		<div class="fullwidth-carousel-container margin-top-25">
-			<div class="fullwidth-slick-carousel category-carousel">
-
-				<!-- Item -->
-				<div class="fw-carousel-item">
-					<div class="category-box-container">
-						<!-- <div class="listing-badge now-open">Hot Promo</div> -->
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/Promo_Partner_Copy_3-Lionparcel.jpg" style="height: 200px;">
-						</a>
-					</div>
-				</div>
-
-				<!-- Item -->
-				<div class="fw-carousel-item">
-					<div class="category-box-container">
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/Promo_Partner_lionparcel_seller.jpg" style="height: 200px;">
-						</a>
-					</div>
-				</div> <!-- Item -->
-				<div class="fw-carousel-item">
-					<div class="category-box-container">
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/Promo_Partner_Copy_LIONPARCEL.jpg" style="height: 200px;">
-						</a>
-					</div>
-				</div> <!-- Item -->
-
-				<div class="fw-carousel-item">
-					<div class="category-box-container">
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/slide-lion-parcel.jpg" style="height: 200px;">
-						</a>
-					</div>
-				</div> <!-- Item -->
-				<div class="fw-carousel-item">
-					<div class="category-box-container">
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/duit_horisontal2.jpg" style="height: 200px;">
-						</a>
-					</div>
-				</div> <!-- Item -->
-
-
-			</div>
-		</div>
-		<!-- promo Boxes / End -->
-
-
-
-
-		<!-- Info Section -->
-		<section class="fullwidth padding-top-75 padding-bottom-70" data-background-color="#f9f9f9">
-			<div class="container">
-
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<h3 class="headline centered headline-extra-spacing">
-							<strong class="headline-with-separator">Contact Us</strong>
-							<span class="margin-top-25">You know you can ask everything</span>
-						</h3>
-					</div>
-				</div>
-
-				<div class="row icons-container">
-					<!-- Stage -->
-					<div class="col-md-3">
-						<div class="icon-box-2 with-line">
-							<!-- <i class="im im-icon-Map2"></i> -->
-							<img src="<?php echo base_url('assets/leandingpage/images/contact-01.png') ?>" alt="">
-							<h3>Business Inquiries</h3>
-							<p>Email : sales@lionparcel.com</p>
-							<p>Phone : +62-21-22580868</p>
-							<p>+62-21-80820072</p>
-						</div>
-					</div>
-					<!-- Stage -->
-					<div class="col-md-3">
-						<div class="icon-box-2 with-line">
-							<!-- <i class="im im-icon-Map2"></i> -->
-							<img src="<?php echo base_url('/assets/leandingpage/images/contact-02.png') ?>" alt="">
-							<h3>Pendaftaran Agen</h3>
-							<p>Email : sales@lionparcel.com</p>
-							<p>Phone : +62-21-22580868</p>
-							<p>+62-21-80820072</p>
-						</div>
-					</div>
-					<!-- Stage -->
-					<div class="col-md-3">
-						<div class="icon-box-2 with-line">
-							<!-- <i class="im im-icon-Map2"></i> -->
-							<img src="<?php echo base_url('/assets/leandingpage/images/contact-03.png') ?>" alt="">
-							<h3>Customer Service</h3>
-							<p>Email : sales@lionparcel.com</p>
-							<p>Phone : +62-21-22580868</p>
-							<p>+62-21-80820072</p>
-						</div>
-					</div>
-					<!-- Stage -->
-					<div class="col-md-3">
-						<div class="icon-box-2 with-line">
-							<!-- <i class="im im-icon-Map2"></i> -->
-							<img src="<?php echo base_url('/assets/leandingpage/images/contact-04.png') ?>" alt="">
-							<h3>Lion Parcel</h3>
-							<p>Email : sales@lionparcel.com</p>
-							<p>Phone : +62-21-22580868</p>
-							<p>+62-21-80820072</p>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</section>
-		<!-- Info Section / End -->
-
-
-
-
-		<!-- client list -->
-		<section class="fullwidth border-top margin-top-40 margin-bottom-0 padding-top-60 padding-bottom-65" data-background-color="#ffffff">
-			<!-- Logo Carousel -->
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-12">
-						<h3 class="headline centered margin-bottom-40 margin-top-10">Our Client<span></span></h3>
-					</div>
-
-					<!-- Carousel -->
-					<div class="col-md-12">
-						<div class="logo-slick-carousel dot-navigation">
-
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-01.jpg" alt="">
-							</div>
-
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-02.jpg" alt="">
-							</div>
-
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-03.jpg" alt="">
-							</div>
-
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-04.jpg" alt="">
-							</div>
-
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-05.jpg" alt="">
-							</div>
-
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-06.jpg" alt="">
-							</div>
-
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-07.jpg" alt="">
-							</div>
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-08.jpg" alt="">
-							</div>
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-09.jpg" alt="">
-							</div>
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-10.jpg" alt="">
-							</div>
-							<div class="item">
-								<img src="http://lionparcel.com/assets/pages/images/home/partner-11.jpg" alt="">
-							</div>
-
-
-						</div>
-					</div>
-					<!-- Carousel / End -->
-
-				</div>
-			</div>
-			<!-- Logo Carousel / End -->
-		</section>
-		<!-- client List / End-->

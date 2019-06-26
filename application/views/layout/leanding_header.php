@@ -7,9 +7,12 @@
 ================================================== -->
 <link rel="stylesheet" href="<?php echo base_url('assets/leandingpage/css/style.css') ?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/leandingpage/css/main-color.css') ?>" id="colors">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <link rel="shortcut icon" href="<?php echo base_url('assets/leandingpage/images/logonoupper.png') ?>" type="image/x-icon">
 </head>
 

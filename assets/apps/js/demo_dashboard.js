@@ -69,9 +69,9 @@ $(function(){
     Morris.Donut({
         element: 'dashboard-donut-1',
         data: [
-            {label: "Returned", value: 2513},
-            {label: "New", value: 764},
-            {label: "Registred", value: 311}
+            {label: "Area 1", value: 2513},
+            {label: "Area 2", value: 764},
+            {label: "Area 3", value: 311}
         ],
         colors: ['#33414E', '#1caf9a', '#FEA223'],
         resize: true
@@ -83,19 +83,24 @@ $(function(){
     Morris.Bar({
         element: 'dashboard-bar-1',
         data: [
-            { y: 'Oct 10', a: 75, b: 35 },
-            { y: 'Oct 11', a: 64, b: 26 },
-            { y: 'Oct 12', a: 78, b: 39 },
-            { y: 'Oct 13', a: 82, b: 34 },
-            { y: 'Oct 14', a: 86, b: 39 },
-            { y: 'Oct 15', a: 94, b: 40 },
-            { y: 'Oct 16', a: 96, b: 41 }
+            { y: 'Jan', a: 5500 },
+            { y: 'Feb', a: 6421 },
+            { y: 'Mar', a: 7208 },
+            { y: 'Apr', a: 5283 },
+            { y: 'May', a: 8231 },
+            { y: 'Jun', a: 9438 },
+            { y: 'Jul', a: 0 },
+            { y: 'Agst', a: 0 },
+            { y: 'Sept', a: 0 },
+            { y: 'Okt', a: 0 },
+            { y: 'Nov', a: 0 },
+            { y: 'Des', a: 0 }
         ],
         xkey: 'y',
-        ykeys: ['a', 'b'],
-        labels: ['New Users', 'Returned'],
+        ykeys: 'a',
+        labels: 'Deliverd',
         barColors: ['#33414E', '#1caf9a'],
-        gridTextSize: '10px',
+        gridTextSize: '15px',
         hideHover: true,
         resize: true,
         gridLineColor: '#E5E5E5'

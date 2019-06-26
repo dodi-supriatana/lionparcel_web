@@ -7,6 +7,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
     <link rel="icon" href="<?php echo base_url('assets/icon/lion-parcel-logo.png') ?>" type="image/x-icon" />
 
@@ -39,8 +43,8 @@
                             <img src="<?php echo base_url('assets/apps/assets/images/users/avatar.jpg') ?>" alt="John Doe" />
                         </div>
                         <div class="profile-data">
-                            <div class="profile-data-name">John Doe</div>
-                            <div class="profile-data-title">Web Developer/Designer</div>
+                            <div class="profile-data-name">Dodi Supriatna</div>
+                            <div class="profile-data-title">Administrator</div>
                         </div>
                         <div class="profile-controls">
                             <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>

@@ -7,7 +7,7 @@ class dashboard extends MX_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model("Mlogin");
+		// $this->load->model("Mlogin");
 	}
 
 	public function index()
