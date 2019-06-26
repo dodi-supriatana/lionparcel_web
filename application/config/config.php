@@ -26,7 +26,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] = 'http://lionparcel.cudo.co.id/';
 // $config['base_url'] = 'http://localhost/lionparcel_web/';
 
-$config['base_url'] = 'http://localhost/lionparcel_jolly/';
+$config['base_url'] = 'http://lionparcel.cudo.co.id/';
+// $config['base_url'] = 'http://localhost/lionparcel_jolly/';
 
 
 /*
