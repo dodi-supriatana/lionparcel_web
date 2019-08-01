@@ -116,17 +116,20 @@
 			</div>
 		</div>
 		<!-- promo Boxes / End -->
+		<div>
+		 	<img src="<?php echo base_url('assets/leandingpage/images/promo/parallax1.jpg') ?>" width="100%" height="50%">
+		</div>
+		 
+		<!-- <div class="parallax" data-background="<?php echo base_url('assets/leandingpage/images/promo/slider-03.jpg') ?>" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
 
-		<div class="parallax" data-background="<?php echo base_url('assets/leandingpage/images/promo/slider-03.jpg') ?>" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
-
-			<!-- Infobox -->
+		
 			<div class="text-content white-font">
 				<div class="container">
 
 					<div class="row">
 						<div class="col-lg-6 col-sm-8">
-							<!-- <h2>Streamline Your Business</h2> -->
-							<!-- <p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p> -->
+							<h2>Streamline Your Business</h2>
+							<p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p>
 							<a href="listings-list-with-sidebar.html" class="button margin-top-25">Get Started</a>
 						</div>
 					</div>
@@ -134,9 +137,9 @@
 				</div>
 			</div>
 
-			<!-- Infobox / End -->
+			
 
-		</div>
+		</div> -->
 
 
 		<!-- Info Section -->
