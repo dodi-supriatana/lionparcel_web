@@ -28,6 +28,7 @@
 <script type="text/javascript" src="<?php echo base_url('assets/apps/js/plugins/moment.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/apps/js/plugins/daterangepicker/daterangepicker.js') ?>"></script>
 <!-- END THIS PAGE PLUGINS-->
+<script type="text/javascript" src="<?php echo base_url('assets/apps/js/plugins/datatables/jquery.dataTables.min.js') ?>"></script>    
 
 <!-- START TEMPLATE -->
 <script type="text/javascript" src="<?php echo base_url('assets/apps/js/settings.js') ?>"></script>

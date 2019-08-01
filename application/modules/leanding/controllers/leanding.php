@@ -26,7 +26,7 @@ class leanding extends MX_Controller
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
-		$data['maps']="";
+		$data['maps'] = "";
 		// $data['city']=$this->Mleanding->get_city();
 		$this->load->view('layout/leanding_header');
 		$this->load->view('main');
@@ -58,7 +58,9 @@ class leanding extends MX_Controller
         WHERE
             rt.origin_3lc = '" . $origin . "' 
 			AND rt.destination_3lc = '" . $destinance . "'")->result();
-		// print_r($data);
+
+
+			$data['competitor']=$this->db->query("SELECT * FROM competitor WHERE origin_3lc='".$origin."' and destination_3lc='".$destinance."' and price !='' ORDER BY company desc, price desc ")->result();		
 
 		$this->load->view('layout/leanding_header');
 		$this->load->view('cektarif', $data);
@@ -74,18 +76,6 @@ class leanding extends MX_Controller
 			$json = $query->result();
 		}
 		echo json_encode($json);
-		// $json = [];
-		// // $this->load->database();
-		// if(!empty($this->input->get("q"))){
-		// 	$this->db->like('kelurahan', $this->input->get("q"));
-		// 	$query = $this->db->select('3lc as id,kelurahan as text')
-		// 				->limit(10)
-		// 				->get("wilayah_tabel");
-		// 	$json = $query->result();
-		// }
-
-
-		// echo json_encode($json);
 	}
 
 	public function get_marker($lat = "", $long = "")
@@ -101,7 +91,7 @@ class leanding extends MX_Controller
 	}
 
 	public function get_lat_long()
-    {
+	{
 		// $getloc = json_decode(file_get_contents("http://ipinfo.io/"));
 		// $my_location= $getloc->loc; //to get city
 		// $data = explode(',', $my_location);
@@ -110,62 +100,69 @@ class leanding extends MX_Controller
 
 		// echo $long;
 		// die();
-		
+
 		$script = array(
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
 		$address = $this->input->post('address');
-		
-		// die($address);
-        $geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&key=AIzaSyCfY9TPZ31i6nu-oTLQWjuHaIt5dbc86o4&sensor=false');
+		// $url='';
+		$geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' .urlencode($address) . '&key=AIzaSyBSwqPE41Woyf7qzkjsaujSjIMXy8VAp9Q&sensor=false');
 		$output = json_decode($geocode);
-        $lat = @$output->results[0]->geometry->location->lat;
-        $lng = @$output->results[0]->geometry->location->lng;
+		$lat = @$output->results[0]->geometry->location->lat;
+		$lng = @$output->results[0]->geometry->location->lng;
 
-        if (!empty($lat) or !empty($lng)) {
 
-            $query = $this->db->query("SELECT tabel_agen.*, 
+
+		// echo $lat."<br> yo".$lng;
+		// die();
+
+		if (!empty($lat) or !empty($lng)) {
+
+			$query = $this->db->query("SELECT tabel_agen.*, 
                     (6371 * acos(cos(radians(" . $lat . ")) 
                     * cos(radians(latitude)) * cos(radians(longitude) 
                     - radians(" . $lng . ")) + sin(radians(" . $lat . ")) 
                     * sin(radians(latitude)))) AS jarak 
                     FROM tabel_agen 
-                    HAVING jarak < 10 ORDER BY jarak");
+                    HAVING jarak < 5 ORDER BY jarak");
 
-            $data = array();
-            $lenght=$query->num_rows();
-            foreach ($query ->result() as $datas) {
+			$data = array();
+			$lenght = $query->num_rows();
+			foreach ($query->result() as $datas) {
 
-                $row = array(
-                    'id_agent' => $datas->id_agent,
-                    'nama_agent' => $datas->nama_agent,
-                    'alamat_agent' => $datas->alamat_agent,
-                    'jam_operasional' => $datas->jam_operasional,
-                    'no_telepon' => $datas->no_telepon,
-                    'foto_1' => $datas->foto_1,
-                    'foto_2' => $datas->foto_2,
-                    'foto_3' => $datas->foto_3,
-                    'latitude' => (float)$datas->latitude,
-                    'longitude' => (float)$datas->longitude,
-                    'status' => $datas->status,
-                    'jarak' => $datas->jarak,
-                    // 'latitude' => (float)$datas->latitude,
+				$row = array(
+					'id_agent' => $datas->id_agent,
+					'nama_agent' => $datas->nama_agent,
+					'alamat_agent' => $datas->alamat_agent,
+					'jam_operasional' => $datas->jam_operasional,
+					'no_telepon' => $datas->no_telepon,
+					'foto_1' => $datas->foto_1,
+					'foto_2' => $datas->foto_2,
+					'foto_3' => $datas->foto_3,
+					'latitude' => (float)$datas->latitude,
+					'longitude' => (float)$datas->longitude,
+					'status' => $datas->status,
+					'jarak' => $datas->jarak,
+					// 'latitude' => (float)$datas->latitude,
 
-                );
-                $data['maps'] = $row;
-            }
-        } else {
-            $data['maps'] = [];
-        }
-		
-		print_r($data['maps']);
-		die();
+				);
+			}
+			$data['maps'] = $query->result();
+			$data['lat'] = $lat;
+			$data['lng'] = $lng;
+			// }
+		} else {
+			$data['maps'] = [];
+		}
+
+		// print_r($data['maps']);
+		// die();
 
 		$this->load->view('layout/leanding_header');
 		$this->load->view('find', $data);
 		$this->load->view('layout/leanding_footer', $script);
-    }
+	}
 
 	public function tracking()
 	{
@@ -173,11 +170,11 @@ class leanding extends MX_Controller
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
-		$data[]="";
+		$data[] = "";
 		if (!empty($this->input->post('sst_no'))) {
 			$stt_no = $this->input->post('sst_no');
 			$json = $this->get_tracking($stt_no);
-			$data['tracking']=json_decode($json);
+			$data['tracking'] = json_decode($json);
 			// print_r($data['tracking']);
 			// die();
 		}
@@ -254,36 +251,35 @@ class leanding extends MX_Controller
 
 	public function find()
 	{
-		$script = array(
-			'script' => TRUE,
-			'script_url' => 'main_script'
-		);
 
-		
+
 		$getloc = json_decode(file_get_contents("http://ipinfo.io/"));
-		$my_location= $getloc->loc; //to get city
+		$my_location = $getloc->loc; //to get city
 		$data = explode(',', $my_location);
 		$lat = $data[0];
 		$lng = $data[1];
 
+		// die($lng);
+
+
 		// echo $long;
 		// die();
-		
+
 		$script = array(
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
+
 		// $address = $this->input->post('address');
-		// // die($address);
-        // $geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&key=AIzaSyCfY9TPZ31i6nu-oTLQWjuHaIt5dbc86o4&sensor=false');
+		//  die($address);
+		// $geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&key=AIzaSyCfY9TPZ31i6nu-oTLQWjuHaIt5dbc86o4&sensor=false');
 		// die($geocode);
 		// $output = json_decode($geocode);
-        // $lat = @$output->results[0]->geometry->location->lat;
-        // $lng = @$output->results[0]->geometry->location->lng;
+		// $lat = @$output->results[0]->geometry->location->lat;
+		// $lng = @$output->results[0]->geometry->location->lng;
 
-        if (!empty($lat) or !empty($lng)) {
-
-            $query = $this->db->query("SELECT tabel_agen.*, 
+		if (!empty($lat) || !empty($lng)) {
+			$query = $this->db->query("SELECT tabel_agen.*, 
                     (6371 * acos(cos(radians(" . $lat . ")) 
                     * cos(radians(latitude)) * cos(radians(longitude) 
                     - radians(" . $lng . ")) + sin(radians(" . $lat . ")) 
@@ -291,39 +287,42 @@ class leanding extends MX_Controller
                     FROM tabel_agen 
                     HAVING jarak < 1.3 ORDER BY jarak");
 
-            $data = array();
-            $lenght=$query->num_rows();
-            foreach ($query ->result() as $datas) {
+			$data = array();
+			$lenght = $query->num_rows();
+			foreach ($query->result() as $datas) {
 
-                $row = array(
-                    'id_agent' => $datas->id_agent,
-                    'nama_agent' => $datas->nama_agent,
-                    'alamat_agent' => $datas->alamat_agent,
-                    'jam_operasional' => $datas->jam_operasional,
-                    'no_telepon' => $datas->no_telepon,
-                    'foto_1' => $datas->foto_1,
-                    'foto_2' => $datas->foto_2,
-                    'foto_3' => $datas->foto_3,
-                    'latitude' => (float)$datas->latitude,
-                    'longitude' => (float)$datas->longitude,
-                    'status' => $datas->status,
-                    'jarak' => $datas->jarak,
-                    // 'latitude' => (float)$datas->latitude,
+				$row = array(
+					'id_agent' => $datas->id_agent,
+					'nama_agent' => $datas->nama_agent,
+					'alamat_agent' => $datas->alamat_agent,
+					'jam_operasional' => $datas->jam_operasional,
+					'no_telepon' => $datas->no_telepon,
+					'foto_1' => $datas->foto_1,
+					'foto_2' => $datas->foto_2,
+					'foto_3' => $datas->foto_3,
+					'latitude' => (float)$datas->latitude,
+					'longitude' => (float)$datas->longitude,
+					'status' => $datas->status,
+					'jarak' => $datas->jarak,
+					// 'latitude' => (float)$datas->latitude,
 
-                );
-				$data['maps'] = $query->result();
-				$data['lat']=$lat;
-				$data['lng'] = $lng;
-            }
-        } else {
-            $data['maps'] = [];
-        }
-		
+				);
+			}
+			$data['maps'] = $query->result();
+			$data['lat'] = $lat;
+			$data['lng'] = $lng;
+			// print_r($data['maps']);
+			// die('maps ada');
+		} else {
+			$data['maps'] = [];
+			// die('maps kosong');
+		}
+
 		// print_r($data['maps']);
 		// die();
 
 		$this->load->view('layout/leanding_header');
-		$this->load->view('find',$data);
+		$this->load->view('find', $data);
 		$this->load->view('layout/leanding_footer', $data);
 	}
 

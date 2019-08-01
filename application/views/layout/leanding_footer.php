@@ -60,7 +60,7 @@
 
 <!-- Scripts
 ================================================== -->
-<!-- <script src="https://code.jquery.com/jquery-1.9.0.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.9.0.min.js"></script>
 <script data-cfasync="false" src="<?php echo base_url('assets/leandingpage/scripts/email-decode.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/jquery-1.9.0.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/mmenu.min.js') ?>"></script>
@@ -96,14 +96,13 @@
         }
     }
 </script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g&amp;libraries=places&amp;callback=initAutocomplete"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g&amp;libraries=places&amp;callback=initAutocomplete"></script>
 
 <script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/infobox.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/markerclusterer.js') ?>"></script>
 <script type="text/javascript">
     var infoBox_ratingType = 'star-rating';
-    if(function($) {
+    (function($) {
         "use strict";
 
         function mainMap() {
@@ -128,7 +127,7 @@
             var locations = [
                 // ini di looping
                 <?php foreach ($maps as $data) { ?>
-                    [locationData('listings-single-page.html', 'images/listing-item-01.jpg', "Tom's Restaurant", '964 School Street, New York', '3.5', '12'), <?php echo $data->latitude ?>, <?php echo $data->longitude ?>, 2, '<i class="im im-icon-Home-5"></i>'],
+                    [locationData('listings-single-page.html', 'https://lh3.googleusercontent.com/z5-N3zRKO3yt_RAAQcjrGcTZ0UMqloIVa0GgjHCCLqNQ3NsaJMCLAaShe2a_LQjkk2_vauaelg=w1080-h608-p-no-v0', "<?php echo $data->nama_agent ?>", '964 School Street, New York', '3.5', '12'), <?php echo $data->latitude ?>, <?php echo $data->longitude ?>, 2, '<i class="im im-icon-Home-5"></i>'],
                 <?php } ?>
             ];
             google.maps.event.addListener(ib, 'domready', function() {
@@ -675,7 +674,7 @@
 
 <!-- Typed Script -->
 <script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/typed.js') ?>"></script>
-<script>
+<!-- <script>
     var typed = new Typed('.typed-words', {
         strings: ["Agen Disekirar Anda", " Resi Pesanan Anda", " Harga Paket"],
         typeSpeed: 80,
@@ -685,7 +684,7 @@
         loop: true,
         showCursor: true
     });
-</script>
+</script> -->
 
 
 

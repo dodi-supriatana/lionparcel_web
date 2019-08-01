@@ -9,7 +9,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<h2>
-								Ayo cek
+								Menjangkau Ke seluruh Pelosok indonesia
 								<!-- Typed words can be configured in script settings at the bottom of this HTML file -->
 								<span class="typed-words"></span>
 							</h2>
@@ -19,25 +19,19 @@
 
 
 								<div class="main-search-input-item">
-									<!-- <select name="asal"  data-placeholder="Asal" > -->
-									<select class="itemName form-control" name="origin"></select>
-										<!-- Hours added via JS (this is only for demo purpose) -->
-									</select>
-
-
+									<select class="itemName" name="origin" placeholder="Select Origin" style="font-size:20px;"></select>
+									
 								</div>
 								<div class="main-search-input-item">
-								<select class="itemName form-control" name="destination"></select>
-										<!-- Hours added via JS (this is only for demo purpose) -->
-										<option></option>
-
-									</select>
+									<select class="itemName1" name="destination" placeholder="Select Destination"></select>
+									
 								</div>
 
 
 								<div class="main-search-input-item">
-									<input type="number" name="kg" placeholder="Kg" min="1">
+									<input type="number" name="kg" placeholder=" Kg" min="1" style="height: 29px;">
 								</div>
+
 								<button type="submit" class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
 
 							</div>
@@ -79,7 +73,7 @@
 
 
 		<!-- promo Carousel -->
-		<div class="fullwidth-carousel-container margin-top-25">
+		<div class="fullwidth-carousel-container margin-top-25 margin-bottom-75">
 			<div class="fullwidth-slick-carousel category-carousel">
 
 				<!-- Item -->
@@ -282,7 +276,22 @@
 		
 <script type="text/javascript">
       $('.itemName').select2({
-        placeholder: '--- Select Item ---',
+		placeholder: ' Select Origin',
+        ajax: {
+          url: '<?php echo base_url('leanding/getcity') ?>',
+          dataType: 'json',
+          delay: 250,
+          processResults: function (data) {
+            return {
+              results: data
+            };
+          },
+          cache: true
+        }
+	  });
+	  
+	  $('.itemName1').select2({
+		placeholder: ' Select Destination',
         ajax: {
           url: '<?php echo base_url('leanding/getcity') ?>',
           dataType: 'json',

@@ -52,11 +52,11 @@
 
 									<div class="main-search-input-item location">
 										<div id="autocomplete-container">
-											<input type="text" placeholder="Input Your STT No" name="sst_no">
+											<input type="text" placeholder=" Input Your STT No" name="sst_no" style="height: 29px;">
 										</div>
 										<a href="#"><i class="fa fa-map-marker"></i></a>
 									</div>
-									<button type="submit" class="button">Search</button>
+									<button type="submit" class="button" style="height: 39px;">Search</button>
 
 								</div>
 							</form>
@@ -82,7 +82,8 @@
 
 
 		<!-- Content================================================== -->
-
+		<?php if (!empty( $tracking)) { ?>
+		
 		<div class="container mt-5 mb-5">
 			<div class="row">
 				<div class="col-md-6 offset-md-3">
@@ -107,3 +108,4 @@
 				</div>
 			</div>
 		</div>
+	<?php } ?>

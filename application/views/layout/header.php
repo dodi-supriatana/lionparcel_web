@@ -12,6 +12,10 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
     <link rel="icon" href="<?php echo base_url('assets/icon/lion-parcel-logo.png') ?>" type="image/x-icon" />
 
     <!-- END META SECTION -->
@@ -59,41 +63,42 @@
                 <li class="xn-openable">
                     <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Master</span></a>
                     <ul>
-                        <li><a href="pages-gallery.html"><span class="fa fa-image"></span> User</a></li>
-                        <li><a href="pages-profile.html"><span class="fa fa-user"></span> Rate</a></li>
-                        <li><a href="pages-address-book.html"><span class="fa fa-users"></span> Zona</a></li>
+                        <li><a href="<?php echo base_url('user') ?>"><span class="fa fa-user"></span> User</a></li>
+                        <li><a href="<?php echo base_url('rate') ?>"><span class="fa fa-usd"></span> Rate</a></li>
+                        <li><a href="<?php echo base_url('zona') ?>"><span class="fa fa-globe"></span> Zona</a></li>
                     </ul>
 
                 </li>
                 <li class="xn-openable">
                     <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Check Transaction</span></a>
                     <ul>
-                        <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Price</a></li>
-                        <li><a href="pages-profile.html"><span class="fa fa-user"></span> Delivered Status</a></li>
+                        <li><a href="<?php echo base_url('price') ?>"><span class="fa fa-image"></span> Price</a></li>
+                        <li><a href="<?php echo base_url('tracking') ?>"><span class="fa fa-image"></span> Tracking</a></li>
+                        <li><a href="<?php echo base_url('listpickup') ?>"><span class="fa fa-user"></span> Delivered Status</a></li>
                     </ul>
 
                 </li>
                 <li class="xn-openable">
                     <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Agent</span></a>
                     <ul>
-                        <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Agent List</a></li>
-                        <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Agent Performance</a></li>
-                        <li><a href="pages-profile.html"><span class="fa fa-user"></span> Agent Registration</a></li>
+                        <li><a href="<?php echo base_url('agent_list') ?>"><span class="fa fa-home"></span> Agent List</a></li>
+                        <!-- <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Agent Performance</a></li> -->
+                        <li><a href="<?php echo base_url('agent_registrasion') ?>"><span class="fa fa-book"></span> Agent Registration</a></li>
                     </ul>
 
                 </li>
 
-                <li class="xn-openable">
+                <!-- <li class="xn-openable">
                     <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">CMS Setting</span></a>
                     <ul>
-                        <li><a href="pages-gallery.html"><span class="fa fa-image"></span> Promo</a></li>
-                        <li><a href="pages-profile.html"><span class="fa fa-user"></span> Client</a></li>
-                        <li><a href="pages-profile.html"><span class="fa fa-tablet"></span> On Boarding</a></li>
+                        <li><a href="<?php echo base_url('promo') ?>"><span class="fa fa-money"></span> Promo</a></li>
+                        <li><a href="<?php echo base_url('client') ?>"><span class="fa fa-user"></span> Parner</a></li>
+                        <li><a href="<?php echo base_url('boarding') ?>"><span class="fa fa-tablet"></span> On Boarding</a></li>
                     </ul>
 
-                </li>
+                </li> -->
                 <li>
-                    <a href="maps.html"><span class="fa fa-map-marker"></span> <span class="xn-text">Comparation</span></a>
+                    <!-- <a href="<?php echo base_url('comparation') ?>"><span class="fa fa-map-marker"></span> <span class="xn-text">Comparation</span></a> -->
                 </li>
 
             </ul>
@@ -218,10 +223,3 @@
 
             <!-- START BREADCRUMB -->
             <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Dashboard</li>
-            </ul>
-            <!-- END BREADCRUMB -->
-
-            <!-- PAGE CONTENT WRAPPER -->
-            <div class="page-content-wrap">
