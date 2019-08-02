@@ -338,17 +338,17 @@ input {
   border-bottom: 1px solid white;
   padding: 6px 30px;
   font-family: Poppins;
-  color: white;
+  color: : #d7282d;
 
   box-sizing: border-box; }
   input::-webkit-input-placeholder {
-    color: white; }
+    color: #d7282d; }
   input::-moz-placeholder {
-    color:white; }
+    color:#d7282d; }
   input:-ms-input-placeholder {
-    color: white; }
+    color: #d7282d; }
   input:-moz-placeholder {
-    color: white; }
+    color: #d7282d; }
   input:focus {
     border-bottom: 1px solid #222; }
     input:focus::-webkit-input-placeholder {
