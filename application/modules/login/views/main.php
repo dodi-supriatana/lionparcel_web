@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Lionparcel</title>
+  <title>Lionparcel IOT</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -37,36 +37,37 @@
   <div id="bg">
   <img src="<?php echo base_url();?>assets/dist/img/Login.png" alt="">
 </div>
-<div class="login-box">
+<div class="login-box" style="float: right; margin-right: 100px;">
   <!-- /.login-logo -->
   <div class="col-xs-12">
-      <center><p style="color:white;padding-bottom:8%;"><font size="5px"><b>Welcome Back!</b></font><br>
-        <font size="4px">Login to Continue Parcel Lion</font></p></center>
+      <center><p style="color:'#9d0004';padding-bottom:8%;"><font size="5px" color="#9d0004"><b>Welcome to Lionparcel</b></font><br>
+        <font size="4px" color="#9d0004">Login to Continue the Agent Dashboard</font></p></center>
 
   <div class="login-box-bod">
      <div class="row">
-        <div class="col-xs-5">
-         <img src="<?php echo base_url();?>assets/dist/img/logoupperwhite.png" width="200%" align="right" style="padding-left:20px;">
-        </div>
+        <!-- <div class="col-xs-5">
+         <img src="<?php echo base_url();?>assets/dist/img/logoupperwhite.png" align="right" width="400%">
+        </div> -->
         <!-- /.col -->
-        <div class="col-xs-7">
+        <div class="col-md-12">
          <form action="<?php echo base_url('/login/login_validation');?>" method="post">
 
         <div class="form-group">
             <label for="your_name"><img src="<?php echo base_url();?>assets/icon/outline_email_white_18dp.png" width="25px"></label>
-            <input type="email" name="username"  placeholder="Email Address" required style="background:transparent;border-color:white;font-size:16px;"/>
+            <input autocomplete="off" type="email" name="username"  placeholder="Email Address" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
         </div>
          <div class="form-group">
             <label for="re-pass"><img src="<?php echo base_url();?>assets/icon/outline_https_white_18dp.png" width="25px"></label>
-             <input type="password" name="password"  placeholder="Password" required style="background:transparent;border-color:white;font-size:16px;"/>
+             <input autocomplete="off" type="password" name="password"  placeholder="Password" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
           </div>
+          <br>
         <div class="row">
           <div class="col-xs-8">
             
           </div>
           <!-- /.col -->
           <div class="col-xs-12">
-            <button type="submit" class="btn btn-warning btn-block btn-flat" style="background:transparent; border-color:white;font-size:18px;">Log In</button>
+            <button type="submit" class="btn btn-warning btn-block btn-flat" style=" background:transparent; border-color:#d7282d; border-width: 2px; color: #d7282d; font-size:18px; border-radius: 40px;">Sign In</button>
           </div>
           <center><p style="color:white;padding-bottom:8%;"><font size="3px"><b><?php //echo $error; ?></b></font><br>
           
