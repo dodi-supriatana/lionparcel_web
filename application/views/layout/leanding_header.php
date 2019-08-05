@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/leandingpage/css/style.css') ?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/leandingpage/css/main-color.css') ?>" id="colors">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link rel="shortcut icon" href="<?php echo base_url('assets/leandingpage/images/logonoupper.png') ?>" type="image/x-icon">
@@ -87,7 +87,7 @@
 										<br>
 										<div>
 											<div class="col-md-12">
-												<button type="submit" class="btn btn-warning btn-block btn-flat" href="<?php echo base_url('leanding/tracking') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Masuk sebagai agen Lionparcel</button>
+												<a class="btn btn-warning btn-block btn-flat" href="<?php echo base_url('login') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Masuk sebagai agen Lionparcel</a>
 											</div>
 										</div>
 

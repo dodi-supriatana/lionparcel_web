@@ -1,5 +1,6 @@
 		<!-- Banner================================================== -->
-		
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
 
 		
 		<div class="main-search-container centered" data-background-image="assets/leandingpage/images/lion_man.png">
