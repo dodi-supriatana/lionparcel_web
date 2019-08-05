@@ -66,14 +66,15 @@
                         <li><a href="<?php echo base_url('user') ?>"><span class="fa fa-user"></span> User</a></li>
                         <li><a href="<?php echo base_url('rate') ?>"><span class="fa fa-usd"></span> Rate</a></li>
                         <li><a href="<?php echo base_url('zona') ?>"><span class="fa fa-globe"></span> Zona</a></li>
+                        <li><a href="<?php echo base_url('promo') ?>"><span class="fa fa-globe"></span> Promo</a></li>
                     </ul>
 
                 </li>
                 <li class="xn-openable">
                     <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Check Transaction</span></a>
                     <ul>
-                        <li><a href="<?php echo base_url('price') ?>"><span class="fa fa-image"></span> Price</a></li>
-                        <li><a href="<?php echo base_url('tracking') ?>"><span class="fa fa-image"></span> Tracking</a></li>
+                        <!-- <li><a href="<?php echo base_url('price') ?>"><span class="fa fa-image"></span> Price</a></li>
+                        <li><a href="<?php echo base_url('tracking') ?>"><span class="fa fa-image"></span> Tracking</a></li> -->
                         <li><a href="<?php echo base_url('listpickup') ?>"><span class="fa fa-user"></span> Delivered Status</a></li>
                     </ul>
 

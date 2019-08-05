@@ -25,7 +25,7 @@
                <!-- START DEFAULT DATATABLE -->
                <div class="panel panel-default">
                   <div class="panel-heading">
-                     <h3 class="panel-title"><button type="button" class="btn btn-danger btn-rounded">Click Here To Update Rate</button></h3>
+                     <h3 class="panel-title"><a href="<?php echo base_url('rate') ?>" type="button" class="btn btn-danger btn-rounded">Click Here To Update Rate</a></h3>
                      <ul class="panel-controls">
                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                         <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>

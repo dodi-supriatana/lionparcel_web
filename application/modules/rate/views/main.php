@@ -86,7 +86,9 @@
             <h4 class="modal-title" id="myModalLabel">Upload New Rate</h4>
          </div>
          <div class="modal-body">
-            <form action="<?php echo base_url('rate/uploadData') ?>" method="POST" enctype="multipart/form-data">
+            <!-- <form action="<?php echo base_url('rate/uploadData') ?>" method="POST" enctype="multipart/form-data"> -->
+            <form action="<?php echo base_url('perview') ?>" method="POST" enctype="multipart/form-data">
+
                <div class="row">
                   <div class="col-md-12">
                      <div class="form-group">
