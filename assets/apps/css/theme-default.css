@@ -3875,7 +3875,7 @@ background: #1caf9a !important;
   background: url("../img/bg.png") left top repeat #1b1e24;
 }
 .login-container .login-box {
-  width: 400px;
+  width: 100%;
   margin: 0px auto;
   padding-top: 100px;
 }
