@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="<?php echo base_url('assets/leandingpage/css/style.css') ?>">
 <link rel="stylesheet" href="<?php echo base_url('assets/leandingpage/css/main-color.css') ?>" id="colors">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link rel="shortcut icon" href="<?php echo base_url('assets/leandingpage/images/logonoupper.png') ?>" type="image/x-icon">
@@ -65,7 +65,7 @@
 					<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
 
 						<div class="small-dialog-header">
-							<h3>Sign In</h3>
+							<img src="<?php echo base_url('assets/icon/logonew.png')?>" width="299px">
 						</div>
 
 						<!--Tabs -->
@@ -80,30 +80,14 @@
 
 								<!-- Login -->
 								<div class="tab-content" id="tab1" style="display: none;">
-									<form method="post" class="login">
-
-										<p class="form-row form-row-wide">
-											<label for="username">Username:
-												<i class="im im-icon-Male"></i>
-												<input type="text" class="input-text" name="username" id="username" value="" />
-											</label>
-										</p>
-
-										<p class="form-row form-row-wide">
-											<label for="password">Password:
-												<i class="im im-icon-Lock-2"></i>
-												<input class="input-text" type="password" name="password" id="password" />
-											</label>
-											<span class="lost_password">
-												<a href="#">Lost Your Password?</a>
-											</span>
-										</p>
-
-										<div class="form-row">
-											<input type="submit" class="button border margin-top-5" name="login" value="Login" />
-											<div class="checkboxes margin-top-10">
-												<input id="remember-me" type="checkbox" name="check">
-												<label for="remember-me">Remember Me</label>
+									<form>
+										<div>
+											<img src="<?php echo base_url('assets/leandingpage/images/loginagen.png')?>" >
+										</div>
+										<br>
+										<div>
+											<div class="col-md-12">
+												<a class="btn btn-warning btn-block btn-flat" href="<?php echo base_url('login') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Masuk sebagai agen Lionparcel</a>
 											</div>
 										</div>
 

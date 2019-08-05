@@ -2379,7 +2379,7 @@ label.valid {
 }
 .label-primary,
 .badge-primary {
-  background-color: #1b1e24;
+  background-color: #d7282d;
 }
 .label-success,
 .badge-success {
@@ -4647,7 +4647,7 @@ background: #1caf9a !important;
   position: absolute;
   left: 0px;
   top: 35%;
-  background: rgba(0, 0, 0, 0.9);
+  background: #d7282d;
   padding: 20px;
   width: 100%;
 }
