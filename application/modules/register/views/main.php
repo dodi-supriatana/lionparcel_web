@@ -35,7 +35,7 @@
 </head>
 <body >
   <div id="bg">
-  <img src="<?php echo base_url();?>assets/dist/img/daftar.png" alt="">
+  <img src="<?php echo base_url();?>assets/dist/img/daftar.png" height="auto" width="100%" alt="">
 </div>
 <div class="login-box" >
   <!-- /.login-logo -->

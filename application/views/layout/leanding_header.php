@@ -104,7 +104,7 @@
 										<br>
 										<div>
 											<div class="col-md-12">
-												<a class="btn btn-warning btn-block btn-flat" href="<?php echo base_url('register') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Daftar Baru sebagai agen Lionparcel</a>
+												<a class="btn btn-warning btn-block btn-flat" href="<?php echo base_url('register') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Daftar Baru sebagai agen Lion Parcel</a>
 											</div>
 										</div>
 

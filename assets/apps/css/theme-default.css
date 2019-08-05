@@ -2033,8 +2033,8 @@ ul.panel-controls > li > .dropdown-menu:before {
   border-color: #a7c479;
 }
 .btn-primary {
-  background-color: #1b1e24;
-  border-color: #1b1e24;
+  background-color: #aa0004;
+  border-color: #aa0004;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2237,8 +2237,8 @@ input[type=checkbox] {
   border-color: #D5D5D5;
 }
 .input-group-addon {
-  border-color: #1b1e24;
-  background-color: #1b1e24;
+  border-color: #aa0004;
+  background-color: #aa0004;
   font-size: 13px;
   padding: 0px 10px;
   line-height: 28px;
