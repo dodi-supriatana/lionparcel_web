@@ -13,7 +13,7 @@
             <h1 class="page-title txt-color-blueDark">
                <!-- PAGE HEADER -->
                <i class="fa-fw fa fa-money"></i>
-               Promo Managemet
+               Promo Management
             </h1>
          </div>
 
@@ -32,7 +32,7 @@
                <!-- START DEFAULT DATATABLE -->
                <div class="panel panel-default">
                   <div class="panel-heading">
-                     <h3 class="panel-title">Default</h3>
+                  <a class="btn btn-warning" href="<?php echo base_url('add_promo') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:12px; width:150px; border-radius: 5px;"><span class="fa fa-plus" ></span> Tambah Promo</a>
                      <ul class="panel-controls">
                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                         <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>

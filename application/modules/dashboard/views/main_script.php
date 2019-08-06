@@ -192,4 +192,6 @@ Highcharts.chart('container3', {
 
     }]
 });
+
+
 </script>

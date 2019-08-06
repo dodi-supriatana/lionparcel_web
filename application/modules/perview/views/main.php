@@ -1,5 +1,5 @@
 <li><a href="#">Home</a></li>
-<li class="active">user</li>
+<li class="active">Preview</li>
 </ul>
 <!-- END BREADCRUMB -->
 
@@ -8,13 +8,13 @@
    <div id="content">
       <!-- row -->
       <div class="row">
-         <!-- col -->
-         
-         <!-- end col -->
-         <!-- right side of the page with the sparkline graphs -->
-         <!-- col -->
-
-         <!-- end col -->
+      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark">
+               <!-- PAGE HEADER -->
+               <i class="fa-fw fa fa-eye"></i>
+               Preview
+            </h1>
+         </div>
       </div>
       <!-- PAGE CONTENT WRAPPER -->
       <div class="page-content-wrap">
@@ -22,10 +22,73 @@
          <div class="row">
             <div class="col-md-12">
 
+            <div class="col-md-3">
+
+            <!-- START WIDGET MESSAGES -->
+            <div style="overflow: hidden; padding-top: 0; min-height: auto;" class="widget widget-default widget-item-icon">
+            <div class="widget-item-left" style="background-color: #ffba00;margin-bottom: -8px;margin-left: 0px;width: 80px;">
+               <span class="fa fa-download" style="color:#ffff"></span>
+            </div>
+            <div class="widget-data">
+               <div class="widget-int num-count" style="color:#6c7074">92,710</div>
+               <div class="widget-title" style="color:#ffba00">Updated</div>
+               <div class="widget-subtitle">collected data
+                  <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
+               </div>
+               <!-- <div class="widget-subtitle">In your mailbox</div> -->
+            </div>
+
+            </div>
+            <!-- END WIDGET MESSAGES -->
+
+         </div>
+
+         <div class="col-md-3">
+
+         <!-- START WIDGET MESSAGES -->
+         <div style="overflow: hidden; padding-top: 0; min-height: auto;" class="widget widget-default widget-item-icon">
+         <div class="widget-item-left" style="background-color: #00ca8a;margin-bottom: -8px;margin-left: 0px;width: 80px;">
+            <span class="fa fa-check" style="color:#ffff"></span>
+         </div>
+         <div class="widget-data">
+            <div class="widget-int num-count" style="color:#6c7074">42,000</div>
+            <div class="widget-title" style="color:#00ca8a">Added</div>
+            <div class="widget-subtitle">collected data
+               <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
+            </div>
+            <!-- <div class="widget-subtitle">In your mailbox</div> -->
+         </div>
+
+         </div>
+         <!-- END WIDGET MESSAGES -->
+
+      </div>
+
+      <div class="col-md-3">
+
+         <!-- START WIDGET MESSAGES -->
+         <div style="overflow: hidden; padding-top: 0; min-height: auto;" class="widget widget-default widget-item-icon">
+         <div class="widget-item-left" style="background-color: #ea0008;margin-bottom: -8px;margin-left: 0px;width: 80px;">
+            <span class="fa fa-times" style="color:#ffff"></span>
+         </div>
+         <div class="widget-data">
+            <div class="widget-int num-count" style="color:#6c7074">3,000</div>
+            <div class="widget-title" style="color:#ea0008">Removed</div>
+            <div class="widget-subtitle">collected data
+               <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
+            </div>
+            <!-- <div class="widget-subtitle">In your mailbox</div> -->
+         </div>
+
+         </div>
+         <!-- END WIDGET MESSAGES -->
+
+      </div>
+
                <!-- START DEFAULT DATATABLE -->
                <div class="panel panel-default">
                   <div class="panel-heading">
-                     <h3 class="panel-title"><a href="<?php echo base_url('rate') ?>" type="button" class="btn btn-danger btn-rounded">Click Here To Update Rate</a></h3>
+                     <h3 class="panel-title"><a href="<?php echo base_url('rate') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:12px; width:200px; border-radius: 5px;" type="button" class="btn btn-danger"><span class="fa fa-download"></span> Click Here To Update Rate</a></h3>
                      <ul class="panel-controls">
                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                         <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -47,9 +110,9 @@
                         <tbody>
                            <?php foreach ($perview as $data) { 
                               if ($data->new_price > $data->old_price) {
-                                 $panah='<span class="label label-success"><i class="fa fa-sort-up" style="color: black;"></i> <b>  Updated</b></span>';
+                                 $panah='<span class="label label-success"><i class="fa fa-sort-asc fa-lg" style="color: white;"></i> <b> Updated</b></span>';
                               }else{
-                                 $panah='<span class="label label-success"><i class="fa fa-sort-desc" style="color: red;"></i> <b>  Updated</b></span>';                                 
+                                 $panah='<span class="label label-danger"><i class="fa fa-sort-desc fa-lg" style="color: white;"></i> <b> Updated</b></span>';                                 
                               }
                               ?>
                               <tr>

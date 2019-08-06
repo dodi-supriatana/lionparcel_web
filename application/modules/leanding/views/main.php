@@ -33,7 +33,7 @@
 									<input type="number" name="kg" placeholder=" Kg" min="1" style="height: 29px;">
 								</div>
 
-								<button type="submit" class="button" onclick="window.location.href='listings-half-screen-map-list.html'">Search</button>
+								<button type="submit" class="button"  style="height: 35px;" onclick="window.location.href='listings-half-screen-map-list.html'" >Search</button>
 
 							</div>
 							</form>
@@ -117,9 +117,7 @@
 			</div>
 		</div>
 		<!-- promo Boxes / End -->
-		<div>
-		 	<img src="<?php echo base_url('assets/leandingpage/images/promo/parallax1.jpg') ?>" width="100%" height="50%">
-		</div>
+		
 		 
 		<!-- <div class="parallax" data-background="<?php echo base_url('assets/leandingpage/images/promo/slider-03.jpg') ?>" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
 
@@ -144,14 +142,15 @@
 
 
 		<!-- Info Section -->
-		<section class="fullwidth padding-top-75 padding-bottom-70" data-background-color="#f9f9f9">
+		<section class="fullwidth padding-top-75 padding-bottom-70" style ="background-image: url('assets/dist/img/bg.png');">
+		<!-- <section class="fullwidth padding-top-75 padding-bottom-70" data-background-color="#edecec"> -->
 			<div class="container">
 
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2">
 						<h3 class="headline centered headline-extra-spacing">
 							<strong class="headline-with-separator">Contact Us</strong>
-							<span class="margin-top-25">You know you can ask everything</span>
+							<!-- <span class="margin-top-25">You know you can ask everything</span> -->
 						</h3>
 					</div>
 				</div>
@@ -163,9 +162,9 @@
 							<!-- <i class="im im-icon-Map2"></i> -->
 							<img src="<?php echo base_url('assets/leandingpage/images/contact-01.png') ?>" alt="">
 							<h3>Business Inquiries</h3>
-							<p>Email : sales@lionparcel.com</p>
-							<p>Phone : +62-21-22580868</p>
-							<p>+62-21-80820072</p>
+							<p><span class="fa fa-envelope fa-2x" style="font-size:16px; color:#e33c40;"></span> sales@lionparcel.com</p>
+							<p><span class="fa fa-phone fa-2x" style="font-size:16px; color:#e33c40;"></span> +62-21-22580868</p>
+							<p><span class="fa fa-phone fa-2x" style="font-size:16px; color:#e33c40;"></span> +62-21-80820072</p>
 						</div>
 					</div>
 					<!-- Stage -->
@@ -174,9 +173,9 @@
 							<!-- <i class="im im-icon-Map2"></i> -->
 							<img src="<?php echo base_url('/assets/leandingpage/images/contact-02.png') ?>" alt="">
 							<h3>Pendaftaran Agen</h3>
-							<p>Email : sales@lionparcel.com</p>
-							<p>Phone : +62-21-22580868</p>
-							<p>+62-21-80820072</p>
+							<p><span class="fa fa-envelope fa-2x" style="font-size:16px; color:#e33c40;"></span> sales@lionparcel.com</p>
+							<p><span class="fa fa-phone fa-2x" style="font-size:16px; color:#e33c40;"></span> +62-21-22580868</p>
+							<p><span class="fa fa-phone fa-2x" style="font-size:16px; color:#e33c40;"></span> +62-21-80820072</p>
 						</div>
 					</div>
 					<!-- Stage -->
@@ -185,9 +184,9 @@
 							<!-- <i class="im im-icon-Map2"></i> -->
 							<img src="<?php echo base_url('/assets/leandingpage/images/contact-03.png') ?>" alt="">
 							<h3>Customer Service</h3>
-							<p>Email : sales@lionparcel.com</p>
-							<p>Phone : +62-21-22580868</p>
-							<p>+62-21-80820072</p>
+							<p><span class="fa fa-envelope fa-2x" style="font-size:16px; color:#e33c40;"></span> sales@lionparcel.com</p>
+							<p><span class="fa fa-phone fa-2x" style="font-size:16px; color:#e33c40;"></span> +62-21-22580868</p>
+							<p><span class="fa fa-phone fa-2x" style="font-size:16px; color:#e33c40;"></span> +62-21-80820072</p>
 						</div>
 					</div>
 					<!-- Stage -->
@@ -196,9 +195,9 @@
 							<!-- <i class="im im-icon-Map2"></i> -->
 							<img src="<?php echo base_url('/assets/leandingpage/images/contact-04.png') ?>" alt="">
 							<h3>Lion Parcel</h3>
-							<p>Email : sales@lionparcel.com</p>
-							<p>Phone : +62-21-22580868</p>
-							<p>+62-21-80820072</p>
+							<p><span class="fa fa-envelope fa-2x" style="font-size:16px; color:#e33c40;"></span> sales@lionparcel.com</p>
+							<p><span class="fa fa-phone fa-2x" style="font-size:16px; color:#e33c40;"></span> +62-21-22580868 </p>
+							<p><span class="fa fa-phone fa-2x" style="font-size:16px; color:#e33c40;"></span> +62-21-80820072</p>
 						</div>
 					</div>
 				</div>
@@ -206,8 +205,12 @@
 			</div>
 		</section>
 		<!-- Info Section / End -->
-
-
+		<br>
+		<section>
+		<div>
+		 	<img src="<?php echo base_url('assets/leandingpage/images/promo/parallax1.jpg') ?>" width="100%" height="50%">
+		</div>
+		</section>
 
 
 		<!-- client list -->

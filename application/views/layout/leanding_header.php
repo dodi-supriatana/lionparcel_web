@@ -51,8 +51,9 @@
 								<li><a href="<?php echo base_url('') ?>"><b>Tarif</b></a></li>
 								<li><a href="<?php echo base_url('leanding/tracking') ?>"><b>Tracking</b></a></li>
 								<li><a href="<?php echo base_url('leanding/find') ?>"><b>Find Agen</b></a></li>
+								<li><a href="<?php echo base_url('login') ?>"><b>Agen</b></a></li>
 								<!-- <li><a href="<?php echo base_url('leanding/promo') ?>"><b>Promo</b></a></li> -->
-								<li><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><b>Agen</b></a></li>
+								<!-- <li><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><b>Agen</b></a></li> -->
 
 							</ul>
 						</nav>
@@ -104,7 +105,7 @@
 										<br>
 										<div>
 											<div class="col-md-12">
-												<a class="btn btn-warning btn-block btn-flat" href="<?php echo base_url('register') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Daftar Baru sebagai agen Lionparcel</a>
+												<a class="btn btn-warning btn-block btn-flat" href="<?php echo base_url('register') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Daftar Baru sebagai agen Lion Parcel</a>
 											</div>
 										</div>
 

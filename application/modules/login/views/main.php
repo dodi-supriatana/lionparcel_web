@@ -35,51 +35,129 @@
 </head>
 <body >
   <div id="bg">
-  <img src="<?php echo base_url();?>assets/dist/img/Login.png" alt="">
+  <img src="<?php echo base_url();?>assets/dist/img/Login1.png" alt="">
 </div>
-<div class="login-box" style="float: right; margin-right: 100px;">
+<div class="login-box">
   <!-- /.login-logo -->
-  <div class="col-xs-12">
-      <center><p style="color:'#9d0004';padding-bottom:8%;"><font size="5px" color="#9d0004"><b>Welcome to Lionparcel</b></font><br>
-        <font size="4px" color="#9d0004">Login to Continue the Agent Dashboard</font></p></center>
+  <div class="col-xs-12" style="left: 600px; top:-99px;" >
+      <center><img src="<?php echo base_url(); ?>assets/icon/lion-parcel-logo.png" width="70px" height="70px" /><p style="color:'#9d0004';padding-bottom:8%;"><font size="5px" color="#9d0004"><b>Welcome to Lion Parcel</b></font><br>
+        <font size="4px" color="#9d0004">Sign-in or Register to Continue the Agent Dashboard</font></p></center>
 
-  <div class="login-box-bod">
-     <div class="row">
-        <!-- <div class="col-xs-5">
-         <img src="<?php echo base_url();?>assets/dist/img/logoupperwhite.png" align="right" width="400%">
-        </div> -->
-        <!-- /.col -->
-        <div class="col-md-12">
-         <form action="<?php echo base_url('/login/login_validation');?>" method="post">
+  <!-- start login box body -->
+  <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'login')" id="defaultOpen">Sign-in</button>
+  <button class="tablinks" onclick="openCity(event, 'register')">Register</button>
+</div><br>
 
-        <div class="form-group">
-            <label for="your_name"><img src="<?php echo base_url();?>assets/icon/outline_email_white_18dp.png" width="25px"></label>
-            <input autocomplete="off" type="email" name="username"  placeholder="Email Address" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
+    <!-- tab 1 start -->
+    <div id="login" class="tabcontent">
+    <div class="login-box-bod">
+    <div class="row">
+    <!-- <div class="col-xs-5">
+    <img src="<?php echo base_url();?>assets/dist/img/logoupperwhite.png" align="right" width="400%">
+    </div> -->
+    <!-- /.col -->
+    <div class="col-md-12">
+    <form action="<?php echo base_url('/login/login_validation');?>" method="post">
+    <div class="form-group">
+    <label for="your_name"><img src="<?php echo base_url();?>assets/icon/outline_email_white_18dp.png" width="25px"></label>
+    <input autocomplete="off" type="email" name="username" placeholder="Email Address" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
+    </div>
+    <div class="form-group">
+    <label for="re-pass"><img src="<?php echo base_url();?>assets/icon/outline_https_white_18dp.png" width="25px"></label>
+    <input autocomplete="off" type="password" name="password" placeholder="Password" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
+    </div>
+    <br>
+    <div class="row">
+    <div class="col-xs-8">
+    </div>
+    <!-- /.col -->
+    <div class="col-xs-12">
+    <button type="submit" class="btn btn-warning btn-block btn-flat" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Sign In</button>
+    </div>
+    <center><p style="color:white;padding-bottom:8%;"><font size="3px"><b><?php //echo $error; ?></b></font><br>
+    <!-- /.col -->
+    </div>
+    </form>
+    </div>
+    <!-- /.col -->
+    </div>
+    </div>
+
+    </div>
+    <!-- tab1 end -->
+
+    <!-- tab 2 start -->
+    <div id="register" class="tabcontent">
+    <div class="login-box-bod">
+    <div class="row">
+    <!-- <div class="col-xs-5">
+    <img src="<?php echo base_url();?>assets/dist/img/logoupperwhite.png" align="right" width="400%">
+    </div> -->
+    <!-- /.col -->
+    <div class="col-md-12">
+    <form action="<?php echo base_url('/login/login_validation');?>" method="post">
+    <div class="form-group">
+            <label for="your_name"><img src="<?php echo base_url();?>assets/icon/user.png" width="25px"></label>
+            <input autocomplete="off" type="name" name="username"  placeholder="Masukkan Nama" width="25px" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
+        </div>
+         <div class="form-group">
+            <label for="re-pass"><img src="<?php echo base_url();?>assets/icon/outline_email_white_18dp.png" width="25px"></label>
+             <input autocomplete="off" type="email" name="email"  placeholder="Masukkan Email" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
+          </div>
+          <div class="form-group">
+            <label for="your_name"><img src="<?php echo base_url();?>assets/icon/phone.png" width="25px"></label>
+            <input autocomplete="off" type="phone" name="phone"  placeholder="Nomor Handphone" width="100%" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
         </div>
          <div class="form-group">
             <label for="re-pass"><img src="<?php echo base_url();?>assets/icon/outline_https_white_18dp.png" width="25px"></label>
-             <input autocomplete="off" type="password" name="password"  placeholder="Password" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
+             <input autocomplete="off" type="password" name="password"  placeholder="Kata Sandi" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
           </div>
-          <br>
-        <div class="row">
-          <div class="col-xs-8">
-            
-          </div>
-          <!-- /.col -->
-          <div class="col-xs-12">
-            <button type="submit" class="btn btn-warning btn-block btn-flat" style=" background:transparent; border-color:#d7282d; border-width: 2px; color: #d7282d; font-size:18px; border-radius: 40px;">Sign In</button>
-          </div>
-          <center><p style="color:white;padding-bottom:8%;"><font size="3px"><b><?php //echo $error; ?></b></font><br>
-          
-          <!-- /.col -->
+          <div class="form-group">
+            <label for="your_name"><img src="<?php echo base_url();?>assets/icon/outline_https_white_18dp.png" width="25px"></label>
+            <input autocomplete="off" type="password" name="password"  placeholder="Konfirmasi Kata Sandi" width="100%" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
         </div>
+    <br>
+    <div class="row">
+    <div class="col-xs-8">
+    </div>
+    <!-- /.col -->
+    <div class="col-xs-12">
+    <button type="submit" class="btn btn-warning btn-block btn-flat" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Register</button>
+    </div>
+    <center><p style="color:white;padding-bottom:8%;"><font size="3px"><b><?php //echo $error; ?></b></font><br>
+    <!-- /.col -->
+    </div>
     </form>
-        </div>
-        <!-- /.col -->
-      </div>
-    
-  </div>
+    </div>
+    <!-- /.col -->
+    </div>
+    </div>
+
+    </div>
+    <!-- tab2 end -->
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
   <!-- /.login-box-body -->
+
 </div>
 <!-- /.login-box -->
 
