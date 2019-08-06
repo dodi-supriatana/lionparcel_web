@@ -39,7 +39,7 @@
 </div>
 <div class="login-box" style="float:right;">
   <!-- /.login-logo -->
-  <div class="col-xs-12" style="right:135px; top:-99px;" >
+  <div class="col-xs-12" style="top:-99px;" >
       <center><img src="<?php echo base_url(); ?>assets/icon/lion-parcel-logo.png" width="70px" height="70px" /><p style="color:'#9d0004';padding-bottom:8%;"><font size="5px" color="#9d0004"><b>Welcome to Lion Parcel</b></font><br>
         <font size="4px" color="#9d0004">Sign-in or Register to Continue the Agent Dashboard</font></p></center>
 
