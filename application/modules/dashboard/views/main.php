@@ -12,7 +12,7 @@
         </div>
         <div class="widget-data">
           <div class="widget-int num-count" style="color:#6c7074">92,710</div>
-          <div class="widget-title" style="color:#00ca8a">Complete</div>
+          <div class="widget-title" style="color:#00ca8a">Completed</div>
           <div class="widget-subtitle">collected data
             <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
           </div>
@@ -290,4 +290,7 @@
   </div>
   <!-- END DASHBOARD CHART -->
 
+  
+
 </div>
+

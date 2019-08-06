@@ -143,6 +143,7 @@
 
 		<!-- Info Section -->
 		<section class="fullwidth padding-top-75 padding-bottom-70" style ="background-image: url('assets/dist/img/bg.png');">
+		<!-- <section class="fullwidth padding-top-75 padding-bottom-70" data-background-color="#edecec"> -->
 			<div class="container">
 
 				<div class="row">
