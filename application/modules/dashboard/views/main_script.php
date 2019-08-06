@@ -43,7 +43,7 @@
             text: ''
         },
         xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
         },
         yAxis: {
             title: {
@@ -66,10 +66,10 @@
         },
         series: [{
             name: 'Register',
-            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 0, 0, 0, 0, 0, 0]
+            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5]
         }, {
             name: 'Approved',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 0, 0, 0, 0, 0, 0]
+            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2]
         }]
     });
 
@@ -156,12 +156,7 @@ Highcharts.chart('container3', {
             'Apr',
             'May',
             'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec'
+            'Jul'
         ],
         crosshair: true
     },
@@ -187,7 +182,7 @@ Highcharts.chart('container3', {
     },
     series: [{
         name: 'Transactions',
-        data: [49, 71, 106, 129, 144, 176, 135, 0, 0, 0, 0, 0],
+        data: [49, 71, 106, 129, 144, 176, 135],
         color: '#00CA8A'
 
     }]
