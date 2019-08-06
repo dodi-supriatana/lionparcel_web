@@ -123,7 +123,7 @@
     </div>
     <!-- /.col -->
     <div class="col-xs-12">
-    <button type="submit" class="btn btn-warning btn-block btn-flat" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Sign In</button>
+    <button type="submit" class="btn btn-warning btn-block btn-flat" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:18px; border-radius: 40px;">Register</button>
     </div>
     <center><p style="color:white;padding-bottom:8%;"><font size="3px"><b><?php //echo $error; ?></b></font><br>
     <!-- /.col -->
