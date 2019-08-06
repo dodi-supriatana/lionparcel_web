@@ -214,7 +214,7 @@
 
 
 		<!-- client list -->
-		<section class="fullwidth border-top margin-top-40 margin-bottom-0 padding-top-60 padding-bottom-65" data-background-color="#ffffff">
+		<section class="fullwidth border-top margin-top-40 margin-bottom-0 padding-top-60 padding-bottom-65" data-background-color="#fff">
 			<!-- Logo Carousel -->
 			<div class="container">
 				<div class="row">
