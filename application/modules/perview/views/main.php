@@ -1,5 +1,5 @@
 <li><a href="#">Home</a></li>
-<li class="active">Preview</li>
+<li class="active">Discrepancy</li>
 </ul>
 <!-- END BREADCRUMB -->
 
@@ -11,8 +11,8 @@
       <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
             <h1 class="page-title txt-color-blueDark">
                <!-- PAGE HEADER -->
-               <i class="fa-fw fa fa-eye"></i>
-               Preview
+               <i class="fa-fw fa fa-refresh"></i>
+               Discrepancy
             </h1>
          </div>
       </div>

@@ -40,7 +40,7 @@ $(function(){
             // width: $("#dashboard-chart").width(),
             // height: 250,
             // series: [{color: "#33414E",data: seriesData[0],name: 'New'}, 
-                     // {color: "#1caf9a",data: seriesData[1],name: 'Returned'}]
+                     // {color: "#d7282d",data: seriesData[1],name: 'Returned'}]
     // } );
 
     // rdc.render();
@@ -73,7 +73,7 @@ $(function(){
             {label: "Area 2", value: 764},
             {label: "Area 3", value: 311}
         ],
-        colors: ['#33414E', '#1caf9a', '#FEA223'],
+        colors: ['#33414E', '#d7282d', '#FEA223'],
         resize: true
     });
     /* END Donut dashboard chart */
@@ -126,7 +126,7 @@ $(function(){
       hideHover: true,
       xLabels: 'day',
       gridTextSize: '10px',
-      lineColors: ['#1caf9a','#33414E'],
+      lineColors: ['#d7282d','#33414E'],
       gridLineColor: '#E5E5E5'
     });   
     /* EMD Line dashboard chart */
@@ -149,7 +149,7 @@ $(function(){
       hideHover: true,
       xLabels: 'day',
       gridTextSize: '10px',
-      lineColors: ['#1caf9a','#33414E'],
+      lineColors: ['#d7282d','#33414E'],
       gridLineColor: '#E5E5E5'
     });
     /* End Moris Area Chart */
@@ -160,8 +160,8 @@ $(function(){
                                     regionsSelectable: true,
                                     regionStyle: {selected: {fill: '#B64645'},
                                                     initial: {fill: '#33414E'}},
-                                    markerStyle: {initial: {fill: '#1caf9a',
-                                                   stroke: '#1caf9a'}},
+                                    markerStyle: {initial: {fill: '#d7282d',
+                                                   stroke: '#d7282d'}},
                                     markers: [{latLng: [50.27, 30.31], name: 'Kyiv - 1'},                                              
                                               {latLng: [52.52, 13.40], name: 'Berlin - 2'},
                                               {latLng: [48.85, 2.35], name: 'Paris - 1'},                                            

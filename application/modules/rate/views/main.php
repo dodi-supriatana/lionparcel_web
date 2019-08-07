@@ -1,28 +1,23 @@
 <li><a href="#">Home</a></li>
-<li class="active">Rate</li>
+<li class="active">Rate Management</li>
 </ul>
-<!-- END BREADCRUMB -->
 
-<!-- PAGE CONTENT WRAPPER -->
+
 <div class="page-content-wrap">
    <div id="content">
-      <!-- row -->
       <div class="row">
-         <!-- col -->
+      
          <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
             <h1 class="page-title txt-color-blueDark">
                <!-- PAGE HEADER -->
                <i class="fa-fw fa fa-usd"></i>
-               Rate Managemet
+               Rate Management
             </h1>
          </div>
 
-         <!-- end col -->
-         <!-- right side of the page with the sparkline graphs -->
-         <!-- col -->
-
-         <!-- end col -->
+        
       </div>
+      
       <!-- PAGE CONTENT WRAPPER -->
       <div class="page-content-wrap">
 

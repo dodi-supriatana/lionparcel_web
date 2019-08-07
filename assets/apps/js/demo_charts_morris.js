@@ -34,7 +34,7 @@ var morrisCharts = function() {
         ykeys: ['a', 'b'],
         labels: ['Series A', 'Series B'],
         resize: true,
-        lineColors: ['#1caf9a', '#FEA223']
+        lineColors: ['#d7282d', '#FEA223']
     });
 
 
@@ -63,7 +63,7 @@ var morrisCharts = function() {
             {label: "In-Store Sales", value: 30},
             {label: "Mail-Order Sales", value: 20}
         ],
-        colors: ['#95B75D', '#1caf9a', '#FEA223']
+        colors: ['#95B75D', '#d7282d', '#FEA223']
     });
 
 }();

@@ -1,3 +1,6 @@
+<li><a href="#">Home</a></li>
+<li class="active">Dashboard Administrator</li>
+</ul>
 <div class="page-content-wrap">
 
   <!-- START counting -->
