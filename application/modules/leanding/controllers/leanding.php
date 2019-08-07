@@ -60,7 +60,7 @@ class leanding extends MX_Controller
 			AND rt.destination_3lc = '" . $destinance . "'")->result();
 
 
-			$data['competitor']=$this->db->query("SELECT * FROM competitor WHERE origin_3lc='".$origin."' and destination_3lc='".$destinance."' and price !='' ORDER BY company desc, price desc ")->result();		
+		$data['competitor'] = $this->db->query("SELECT * FROM competitor WHERE origin_3lc='" . $origin . "' and destination_3lc='" . $destinance . "' and price !='' ORDER BY company desc, price desc ")->result();
 
 		$this->load->view('layout/leanding_header');
 		$this->load->view('cektarif', $data);
@@ -76,6 +76,21 @@ class leanding extends MX_Controller
 			$json = $query->result();
 		}
 		echo json_encode($json);
+	}
+
+	public function getcity2()
+	{
+		$json = [];
+		// $word = $this->input->get('q');
+		// if (!empty($word)) {
+		$query = $this->db->query("SELECT CONCAT( w.kelurahan, ', ',w.kecamatan, ', ', w.type ,' ', w.kab_kota, ', ',w.provinsi) as nama, w.3lc as id FROM wilayah w limit 4");
+		$json = $query->result();
+		// }
+
+		$fp = fopen('json_data/data_wlayah.json', 'w');
+		fwrite($fp, json_encode($json));
+		fclose($fp);
+		// echo json_encode($json);
 	}
 
 	public function get_marker($lat = "", $long = "")
@@ -107,7 +122,7 @@ class leanding extends MX_Controller
 		);
 		$address = $this->input->post('address');
 		// $url='';
-		$geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' .urlencode($address) . '&key=AIzaSyBSwqPE41Woyf7qzkjsaujSjIMXy8VAp9Q&sensor=false');
+		$geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($address) . '&key=AIzaSyBSwqPE41Woyf7qzkjsaujSjIMXy8VAp9Q&sensor=false');
 		$output = json_decode($geocode);
 		$lat = @$output->results[0]->geometry->location->lat;
 		$lng = @$output->results[0]->geometry->location->lng;
@@ -140,8 +155,8 @@ class leanding extends MX_Controller
 					'foto_1' => $datas->foto_1,
 					'foto_2' => $datas->foto_2,
 					'foto_3' => $datas->foto_3,
-					'latitude' => (float)$datas->latitude,
-					'longitude' => (float)$datas->longitude,
+					'latitude' => (float) $datas->latitude,
+					'longitude' => (float) $datas->longitude,
 					'status' => $datas->status,
 					'jarak' => $datas->jarak,
 					// 'latitude' => (float)$datas->latitude,
@@ -300,8 +315,8 @@ class leanding extends MX_Controller
 					'foto_1' => $datas->foto_1,
 					'foto_2' => $datas->foto_2,
 					'foto_3' => $datas->foto_3,
-					'latitude' => (float)$datas->latitude,
-					'longitude' => (float)$datas->longitude,
+					'latitude' => (float) $datas->latitude,
+					'longitude' => (float) $datas->longitude,
 					'status' => $datas->status,
 					'jarak' => $datas->jarak,
 					// 'latitude' => (float)$datas->latitude,

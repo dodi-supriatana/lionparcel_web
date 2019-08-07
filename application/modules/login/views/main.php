@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Lionparcel IOT</title>
+  <title>Lionparcel</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -58,7 +58,7 @@
     </div> -->
     <!-- /.col -->
     <div class="col-md-12">
-    <form action="<?php echo base_url('/login/login_validation');?>" method="post">
+    <form action="<?php echo base_url('/dashboard');?>" method="post">
     <div class="form-group">
     <label for="your_name"><img src="<?php echo base_url();?>assets/icon/outline_email_white_18dp.png" width="25px"></label>
     <input autocomplete="off" type="email" name="username" placeholder="Email Address" required style="background:transparent;border-color:#d7282d;font-size:16px;color:#d7282d;"/>
