@@ -8,14 +8,13 @@
    <div id="content">
       <!-- row -->
       <div class="row">
-         <!-- col -->
-      
-
-         <!-- end col -->
-         <!-- right side of the page with the sparkline graphs -->
-         <!-- col -->
-
-         <!-- end col -->
+      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark">
+               <!-- PAGE HEADER -->
+               <i class="fa-fw fa fa-user"></i>
+               Agent Registration
+            </h1>
+         </div>
       </div>
       <!-- PAGE CONTENT WRAPPER -->
       <div class="page-content-wrap">
@@ -26,8 +25,6 @@
                <!-- START DEFAULT DATATABLE -->
                <div class="panel panel-default">
                   <div class="panel-heading">
-                     <h3 class="panel-title"><i class="fa-fw fa fa-user"></i>
-               Agent Registrasion</h3>
                      <ul class="panel-controls">
                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                         <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
