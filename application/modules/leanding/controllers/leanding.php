@@ -83,7 +83,7 @@ class leanding extends MX_Controller
 		$json = [];
 		// $word = $this->input->get('q');
 		// if (!empty($word)) {
-		$query = $this->db->query("SELECT CONCAT( w.kelurahan, ', ',w.kecamatan, ', ', w.type ,' ', w.kab_kota, ', ',w.provinsi) as nama, w.3lc as id FROM wilayah w limit 4");
+		$query = $this->db->query("SELECT CONCAT( w.kelurahan, ', ',w.kecamatan, ', ', w.type ,' ', w.kab_kota, ', ',w.provinsi) as nama, w.3lc as id FROM wilayah w GROUP BY kecamatan");
 		$json = $query->result();
 		// }
 
@@ -121,13 +121,18 @@ class leanding extends MX_Controller
 			'script_url' => 'main_script'
 		);
 		$address = $this->input->post('address');
+
+
 		// $url='';
-		$geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($address) . '&key=AIzaSyBSwqPE41Woyf7qzkjsaujSjIMXy8VAp9Q&sensor=false');
+		$geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($address) . '&key=AIzaSyBmtZNz9aMpD-tDGdjX_ZmvkdCLe8orp7U&sensor=false');
 		$output = json_decode($geocode);
+		// print_r($output);
+		// die();
 		$lat = @$output->results[0]->geometry->location->lat;
 		$lng = @$output->results[0]->geometry->location->lng;
 
-
+		// $lat=$this->input->post('latitude');
+		// $lng=$this->input->post('longitude');
 
 		// echo $lat."<br> yo".$lng;
 		// die();
@@ -166,6 +171,9 @@ class leanding extends MX_Controller
 			$data['maps'] = $query->result();
 			$data['lat'] = $lat;
 			$data['lng'] = $lng;
+			// $data['coba']=$lat;
+			// $data['coba2']=$lng;
+
 			// }
 		} else {
 			$data['maps'] = [];
@@ -264,34 +272,32 @@ class leanding extends MX_Controller
 		return json_encode($data);
 	}
 
-	public function find()
+	public function find($a="", $b="")
 	{
 
 
-		$getloc = json_decode(file_get_contents("http://ipinfo.io/"));
-		$my_location = $getloc->loc; //to get city
-		$data = explode(',', $my_location);
-		$lat = $data[0];
-		$lng = $data[1];
+		// $getloc = json_decode(file_get_contents("http://ipinfo.io/"));
+		// $my_location = $getloc->loc; //to get city
+		// $data = explode(',', $my_location);
+		// $lat = $data[0];
+		// $lng = $data[1];
 
-		// die($lng);
+		// die($a);
+
+if ($a=="") {
+	$this->load->view('layout/leanding_header');
+	$this->load->view('find_temp');
+}else{
+	$lat=$a;
+	$lng=$b;
+}
 
 
-		// echo $long;
-		// die();
 
 		$script = array(
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
-
-		// $address = $this->input->post('address');
-		//  die($address);
-		// $geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&key=AIzaSyCfY9TPZ31i6nu-oTLQWjuHaIt5dbc86o4&sensor=false');
-		// die($geocode);
-		// $output = json_decode($geocode);
-		// $lat = @$output->results[0]->geometry->location->lat;
-		// $lng = @$output->results[0]->geometry->location->lng;
 
 		if (!empty($lat) || !empty($lng)) {
 			$query = $this->db->query("SELECT tabel_agen.*, 

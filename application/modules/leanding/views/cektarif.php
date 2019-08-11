@@ -76,7 +76,7 @@
 								<!-- Image -->
 								<div class="listing-item-image">
 									<img src="<?php echo base_url('assets/leandingpage/images/promo/duit_horisontal2.jpg') ?>" alt="">
-									<span class="tag">Eat & Drink</span>
+									<!-- <span class="tag">Eat & Drink</span> -->
 								</div>
 
 								<!-- Content -->
@@ -164,3 +164,5 @@
 		}
 	});
 </script>
+
+

@@ -1,5 +1,7 @@
 <!-- Banner================================================== -->
-<div id="titlebar"  style="background: #515151;padding-top: 0px;margin-bottom: -1px;"></div>
+
+
+<div id="titlebar" style="background: #515151;padding-top: 0px;margin-bottom: -1px;"></div>
 <div id="map-container" class="fullwidth-home-map">
 
 	<div id="map" data-map-zoom="15">
@@ -49,38 +51,38 @@
 
 
 			<div class="row">
-			<?php if (!empty($maps)) { ?>
-				<?php foreach ($maps as $data) { ?>
-				<!-- Listing Item -->
-				<div class="col-lg-12">
-					<div class="listing-item-container list-layout">
-						<a href="listings-single-page.html" class="listing-item">
+				<?php if (!empty($maps)) { ?>
+					<?php foreach ($maps as $data) { ?>
+						<!-- Listing Item -->
+						<div class="col-lg-12">
+							<div class="listing-item-container list-layout">
+								<a href="listings-single-page.html" class="listing-item">
 
-							<!-- Image -->
-							<div class="listing-item-image">
-								<img src="<?php echo $data->foto_1 ?>" alt="">
-								<span class="tag">Detail</span>
-							</div>
-
-							<!-- Content -->
-							<div class="listing-item-content">
-								<div class="listing-badge now-open">Now Open</div>
-
-								<div class="listing-item-inner">
-									<h3><?php echo $data->nama_agent ?> <i class="verified-icon"></i></h3>
-									<span><?php echo $data->alamat_agent ?></span>
-									<div class="star-rating" data-rating="3.5">
-										<div class="rating-counter">(12 reviews)</div>
+									<!-- Image -->
+									<div class="listing-item-image">
+										<img src="<?php echo $data->foto_1 ?>" alt="">
+										<span class="tag">Detail</span>
 									</div>
-								</div>
 
-								<!-- <span class="like-icon"></span> -->
+									<!-- Content -->
+									<div class="listing-item-content">
+										<div class="listing-badge now-open">Now Open</div>
+
+										<div class="listing-item-inner">
+											<h3><?php echo $data->nama_agent ?> <i class="verified-icon"></i></h3>
+											<span><?php echo $data->alamat_agent ?></span>
+											<div class="star-rating" data-rating="3.5">
+												<div class="rating-counter">(12 reviews)</div>
+											</div>
+										</div>
+
+										<!-- <span class="like-icon"></span> -->
+									</div>
+								</a>
 							</div>
-						</a>
-					</div>
-				</div>
+						</div>
+					<?php } ?>
 				<?php } ?>
-			<?php } ?>
 
 				<!-- Listing Item / End -->
 			</div>
@@ -227,3 +229,4 @@
 		<script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/infobox.min.js') ?>"></script>
 		<script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/markerclusterer.js') ?>"></script> -->
 <!-- <script type="text/javascript" src="<?php echo base_url('assets/leandingpage/scripts/maps.js') ?>"></script> -->
+
