@@ -52,12 +52,15 @@
 
 									<div class="main-search-input-item location">
 										<div id="autocomplete-container">
-											<input type="text" placeholder=" Input Your STT No" name="sst_no" style="height: 35px;">
+											<center>
+											<input type="text" placeholder=" Input Your STT No" name="sst_no" style="height: 35px; width:500px;">
+											</center>
 										</div>
-										<a href="#"><i class="fa fa-map-marker"></i></a>
+										<a href="#" style="right:230px;"><i class="fa fa-map-marker"></i></a>
 									</div>
-									<button type="submit" class="button" style="height: 39px;">Search</button>
-
+										<div>
+											<button type="submit" class="button" style="height:39px;right:200px;">Search</button>
+										</div>
 								</div>
 							</form>
 						</div>
