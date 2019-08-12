@@ -92,7 +92,6 @@
 										</div>
 									</div>
 
-									<span class="like-icon"></span>
 								</div>
 							</a>
 						</div>
