@@ -41,7 +41,7 @@
                            <tr>
                               <th>Date</th>
                               <th>Document Name</th>
-                              <th>Total Row</th>
+                              <!-- <th>Total Row</th> -->
                               <th>Updated Data</th>
                               <th>Update by</th>
                               <th>Download Document</th>
@@ -53,16 +53,16 @@
                            <tr>
                               <td>2019-04-23 10:18:18</td>
                               <td>ALL INDONESIA PER 12 JUNI 2019.xlsx</td>
-                              <td>0</td>
-                              <td>0</td>
+                              <td><a class="btn btn-primary btn-xs" href="<?php echo base_url('perview') ?>" >3 Rows</a></td>
+                              <!-- <td><center>3</center></td> -->
                               <td>Administrator</td>
                               <td><button type="button" class="btn btn-info active">Download</button></td>
                            </tr>
                            <tr>
                               <td>2019-06-25 01:18:18</td>
                               <td>ALL INDONESIA PER 1 MARET 2019 + KPRK (1) (1) (Autosaved).xlsx</td>
-                              <td>0</td>
-                              <td>0</td>
+                              <td><a class="btn btn-primary btn-xs" href="<?php echo base_url('perview') ?>" >3 Rows</a></td>
+                              <!-- <td><center>3</center></td> -->
                               <td>Administrator</td>
                               <td><button type="button" class="btn btn-info active">Download</button></td>
                            </tr>

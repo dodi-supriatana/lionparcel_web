@@ -31,7 +31,8 @@ class login extends MX_Controller
 		echo $password;
 		// die();
 		$count_user = $this->Mlogin->cek_user($username, $password);
-
+		// echo $count_user->num_rows();
+		// die();
 		if ($count_user->num_rows() > 0) {
 
 			// $count_user = $this->Mlogin->cek_user($username, $password);
@@ -47,11 +48,6 @@ class login extends MX_Controller
 					$sess_data['id_user']		= $data->id_user;
 					$sess_data['username']		= $data->username;
 					$sess_data['password']	= $data->password;
-					// $sess_data['picture']	= $data->picture;
-					// $sess_data['group_id']	= $data->group_id;
-					// $sess_data['group_name']	= $data->group_name;
-					// $sess_data['phone']	= $data->phone;
-					// $sess_data['fcm_registered_id']	= $data->fcm_registered_id;
 					$sess_data['user_status']	=  $data->id_level;
 					$this->session->set_userdata($sess_data);
 				}

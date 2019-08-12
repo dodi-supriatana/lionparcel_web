@@ -74,7 +74,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<h2>
-								Menjangkau Ke seluruh Pelosok indonesia
+								Menjangkau Seluruh Pelosok Indonesia
 								<!-- Typed words can be configured in script settings at the bottom of this HTML file -->
 								<span class="typed-words"></span>
 							</h2>
@@ -90,7 +90,7 @@
 									</div>
 									<div class="main-search-input-item">
 										<!-- <select class="itemName1" name="destination" placeholder="Select Destination"></select> -->
-										<input id="myInput2" type="text" name="myCountry2" placeholder="destination" style="height: 29px;" required>
+										<input id="myInput2" type="text" name="myCountry2" placeholder="Destination" style="height: 29px;" required>
 										<input id="myHiddenInput2" type="hidden" name="destination">
 									</div>
 
@@ -280,7 +280,7 @@
 
 
 		<!-- client list -->
-		<section class="fullwidth border-top margin-top-40 margin-bottom-0 padding-top-60 padding-bottom-65" data-background-color="#fff">
+		<section class="fullwidth border-top margin-top-40 margin-bottom-0 padding-top-60 padding-bottom-65" data-background-color="#f7f7f7">
 			<!-- Logo Carousel -->
 			<div class="container">
 				<div class="row">

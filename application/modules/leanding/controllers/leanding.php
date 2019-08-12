@@ -272,7 +272,7 @@ class leanding extends MX_Controller
 		return json_encode($data);
 	}
 
-	public function find($a="", $b="")
+	public function find($a=null, $b=null)
 	{
 
 
@@ -284,15 +284,13 @@ class leanding extends MX_Controller
 
 		// die($a);
 
-if ($a=="") {
+if ($a==null) {
 	$this->load->view('layout/leanding_header');
 	$this->load->view('find_temp');
 }else{
 	$lat=$a;
 	$lng=$b;
 }
-
-
 
 		$script = array(
 			'script' => TRUE,
