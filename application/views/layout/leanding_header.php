@@ -54,7 +54,7 @@
 								<li><a href="<?php echo base_url('login') ?>"><strong>Agen</strong></a></li>
 								<!-- <li><a href="<?php echo base_url('leanding/promo') ?>"><strong>Promo</strong></a></li> -->
 								<!-- <li><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><strong>Agen</strong></a></li> -->
-
+ 
 							</ul>
 						</nav>
 						<div class="clearfix"></div>

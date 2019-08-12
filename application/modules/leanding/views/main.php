@@ -67,7 +67,7 @@
 				color: #ffffff;
 			}
 		</style>
-
+ 
 
 		<div class="main-search-container centered" data-background-image="assets/leandingpage/images/lion_man.png">
 			<div class="main-search-inner">
