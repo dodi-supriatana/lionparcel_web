@@ -87,7 +87,7 @@
 
 									<div class="main-search-input-item">
 										<!-- <select class="itemName" name="origin" placeholder="Select Origin" style="font-size:20px;"></select> -->
-										<input id="myInput" type="text" name="myCountry" placeholder=" Origin" style="height: 29px; width:300px;" required autocomplete="off">
+										<input id="myInput" type="text" name="myCountry" placeholder=" Origin" style="height: 29px; width:300px;" required autocomplete="off" >
 										<input id="myHiddenInput" type="hidden" name="origin">
 									</div>
 									<div class="main-search-input-item">
