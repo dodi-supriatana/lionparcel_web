@@ -47,6 +47,7 @@
 
 			b {
 				color: red;
+				text-transform: uppercase;
 			}
 
 			.autocomplete-items div {
