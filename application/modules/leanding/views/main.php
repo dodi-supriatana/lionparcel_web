@@ -85,18 +85,32 @@
 							<form action="<?php echo base_url('leanding/cektarif') ?>" method="post">
 								<div class="main-search-input">
 
-
+									<!-- START INI FORM ORIGIN by: Alam -->
 									<div class="main-search-input-item">
 										<!-- <select class="itemName" name="origin" placeholder="Select Origin" style="font-size:20px;"></select> -->
-										<input id="myInput" type="text" name="myCountry" placeholder=" Origin" style="height: 29px; width:300px;" required autocomplete="off" >
+										<input id="myInput" type="text" name="myCountry" placeholder=" Origin" style="height: 29px; " required autocomplete="off" 
+										onkeyup="var start = this.selectionStart;
+										var end = this.selectionEnd;
+										this.value = this.value.toUpperCase();
+										this.setSelectionRange(start, end);
+										">
 										<input id="myHiddenInput" type="hidden" name="origin">
 									</div>
+									<!-- END INI FORM ORIGIN by: Alam -->
+
+									<!-- START INI FORM DESTINATION by: Alam -->
 									<div class="main-search-input-item">
 										<!-- <select class="itemName1" name="destination" placeholder="Select Destination"></select> -->
-										<input id="myInput2" type="text" name="myCountry2" placeholder=" Destination" style="height: 29px;" required autocomplete="off">
+										<input id="myInput2" type="text" name="myCountry2" placeholder=" Destination" style="height: 29px;" required autocomplete="off"
+										onkeyup="var start = this.selectionStart;
+										var end = this.selectionEnd;
+										this.value = this.value.toUpperCase();
+										this.setSelectionRange(start, end);
+										">
 
 										<input id="myHiddenInput2" type="hidden" name="destination">
 									</div>
+									<!-- END INI FORM DESTINATION by: Alam -->
 
 
 									<div class="main-search-input-item">
