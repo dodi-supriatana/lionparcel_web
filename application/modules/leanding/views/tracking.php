@@ -42,7 +42,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<h2>
-								Ayo cek
+								Ayo Cek Resi Anda disini 
 								<!-- Typed words can be configured in script settings at the bottom of this HTML file -->
 								<span class="typed-words"></span>
 							</h2>
@@ -53,14 +53,14 @@
 									<div class="main-search-input-item location">
 										<div id="autocomplete-container">
 											<center>
-											<input type="text" placeholder=" Input Your STT No" name="sst_no" style="height: 35px; width:500px;">
+												<input type="text" placeholder=" Input Your STT No" name="sst_no" style="height: 35px; width:500px;">
 											</center>
 										</div>
-										<a href="#" style="right:230px;"><i class="fa fa-map-marker"></i></a>
+										<!-- <a href="#"><i class="fa fa-map-marker"></i></a> -->
 									</div>
-										<div>
-											<button type="submit" class="button" style="height:39px;right:200px;">Search</button>
-										</div>
+									<div>
+										<button type="submit" class="button" style="height:39px;right:200px;">Search</button>
+									</div>
 								</div>
 							</form>
 						</div>
@@ -85,30 +85,30 @@
 
 
 		<!-- Content================================================== -->
-		<?php if (!empty( $tracking)) { ?>
-		
-		<div class="container mt-5 mb-5">
-			<div class="row">
-				<div class="col-md-6 offset-md-3">
-					<h4 style="font-size: 20px;"><strong>Tracking Update</strong></h4>
-					<ul class="timeline">
-						<?php foreach ($tracking as $data) {
+		<?php if (!empty($tracking)) { ?>
 
-							if (is_array($data)) {
-								//  Scan through inner loop
-								foreach ($data as $value) { ?>
-									<li>
-										<strong><a style="color: #ff0000;font-size: 12px;"><?php echo $value->description ?></a></strong>
-										<!-- <a style="color: #4d4d4d;" class="float-right"><?php echo $value->description ?></a> -->
-										<p><?php echo $value->title ?></p>
-									</li>
-								<?php }
-						}
-					} ?>
+			<div class="container mt-5 mb-5">
+				<div class="row">
+					<div class="col-md-6 offset-md-3">
+						<h4 style="font-size: 20px;"><strong>Tracking Update</strong></h4>
+						<ul class="timeline">
+							<?php foreach ($tracking as $data) {
 
-					</ul>
+								if (is_array($data)) {
+									//  Scan through inner loop
+									foreach ($data as $value) { ?>
+										<li>
+											<strong><a style="color: #ff0000;font-size: 12px;"><?php echo $value->description ?></a></strong>
+											<!-- <a style="color: #4d4d4d;" class="float-right"><?php echo $value->description ?></a> -->
+											<p><?php echo $value->title ?></p>
+										</li>
+									<?php }
+								}
+							} ?>
 
+						</ul>
+
+					</div>
 				</div>
 			</div>
-		</div>
-	<?php } ?>
+		<?php } ?>

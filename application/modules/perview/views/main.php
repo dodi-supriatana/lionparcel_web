@@ -30,7 +30,7 @@
                <span class="fa fa-download" style="color:#ffff"></span>
             </div>
             <div class="widget-data">
-               <div class="widget-int num-count" style="color:#6c7074">92,710</div>
+               <div class="widget-int num-count" style="color:#6c7074">3</div>
                <div class="widget-title" style="color:#ffba00">Updated</div>
                <div class="widget-subtitle">collected data
                   <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
@@ -51,7 +51,7 @@
             <span class="fa fa-check" style="color:#ffff"></span>
          </div>
          <div class="widget-data">
-            <div class="widget-int num-count" style="color:#6c7074">42,000</div>
+            <div class="widget-int num-count" style="color:#6c7074">0</div>
             <div class="widget-title" style="color:#00ca8a">Added</div>
             <div class="widget-subtitle">collected data
                <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
@@ -72,7 +72,7 @@
             <span class="fa fa-times" style="color:#ffff"></span>
          </div>
          <div class="widget-data">
-            <div class="widget-int num-count" style="color:#6c7074">3,000</div>
+            <div class="widget-int num-count" style="color:#6c7074">0</div>
             <div class="widget-title" style="color:#ea0008">Removed</div>
             <div class="widget-subtitle">collected data
                <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>

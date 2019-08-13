@@ -48,6 +48,7 @@
 						<nav id="navigation" class="style-1">
 							<ul id="responsive">
 
+
 								<li><a href="<?php echo base_url('') ?>"><strong>Tarif</strong></a></li>
 								<li><a href="<?php echo base_url('leanding/tracking') ?>"><strong>Tracking</strong></a></li>
 								<li><a href="<?php echo base_url('leanding/find') ?>"><strong>Find Agen</strong></a></li>
@@ -55,6 +56,7 @@
 								<!-- <li><a href="<?php echo base_url('leanding/promo') ?>"><strong>Promo</strong></a></li> -->
 								<!-- <li><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><strong>Agen</strong></a></li> -->
  
+
 							</ul>
 						</nav>
 						<div class="clearfix"></div>
