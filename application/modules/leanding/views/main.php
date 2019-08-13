@@ -6,9 +6,9 @@
 			* {
 				box-sizing: border-box;
 			}
-
+			
 			body {
-				font: 16px Arial;
+				font: 14px Arial;
 			}
 
 			/*the container must be positioned relative:*/
@@ -25,26 +25,28 @@
 			}
 
 			input[type=text] {
-				background-color: #f1f1f1;
+				background-color: #fff;
 				width: 100%;
+				border-radius:0;
 			}
 
 			input[type=submit] {
-				background-color: DodgerBlue;
-				color: #fff;
+				background-color: red;
+				color: red;
 				cursor: pointer;
 			}
 
 			.autocomplete-items {
-				position: absolute;
-				border: 1px solid #d4d4d4;
+				position: inherit;
+				border: 1px solid #fff;
 				border-bottom: none;
 				border-top: none;
 				z-index: 99;
-				/*position the autocomplete items to be the same width as the container:*/
 				top: 100%;
-				left: 0;
-				right: 0;
+			}
+
+			b {
+				color: red;
 			}
 
 			.autocomplete-items div {
@@ -61,11 +63,11 @@
 
 			/*when navigating through the items using the arrow keys:*/
 			.autocomplete-active {
-				background-color: DodgerBlue !important;
+				background-color: yellow !important;
 				color: #ffffff;
 			}
 		</style>
-
+ 
 
 		<div class="main-search-container centered" data-background-image="assets/leandingpage/images/lion_man.png">
 			<div class="main-search-inner">
@@ -85,18 +87,19 @@
 
 									<div class="main-search-input-item">
 										<!-- <select class="itemName" name="origin" placeholder="Select Origin" style="font-size:20px;"></select> -->
-										<input id="myInput" type="text" name="myCountry" placeholder="Origin" style="height: 29px;" required>
+										<input id="myInput" type="text" name="myCountry" placeholder=" Origin" style="height: 29px; width:300px;" required autocomplete="off">
 										<input id="myHiddenInput" type="hidden" name="origin">
 									</div>
 									<div class="main-search-input-item">
 										<!-- <select class="itemName1" name="destination" placeholder="Select Destination"></select> -->
-										<input id="myInput2" type="text" name="myCountry2" placeholder="Destination" style="height: 29px;" required>
+										<input id="myInput2" type="text" name="myCountry2" placeholder=" Destination" style="height: 29px;" required autocomplete="off">
+
 										<input id="myHiddenInput2" type="hidden" name="destination">
 									</div>
 
 
 									<div class="main-search-input-item">
-										<input type="number" name="kg" placeholder=" Kg" min="1" style="height: 29px;" required>
+										<input type="number" name="kg" placeholder=" Kg" min="1" style="height: 29px; border-radius:0;" required autocomplete="off">
 									</div>
 
 									<button type="submit" class="button" style="height: 35px;">Search</button>
