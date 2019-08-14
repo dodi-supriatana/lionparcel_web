@@ -117,7 +117,7 @@
                     '<h3>' + locationTitle + '</h3>' +
                     '<span>' + locationAddress + '</span>' +
                     '</div>' +
-                    '</a>' +
+                    '</a>' + 
                     '<div class="listing-content">' +
                     '<div class="listing-title">' +
                     '<div class="' + infoBox_ratingType + '" data-rating="' + locationRating + '"><div class="rating-counter">(' + locationRatingCounter + ' reviews)</div></div>' +
@@ -127,7 +127,7 @@
             var locations = [
                 // ini di looping
                 <?php foreach ($maps as $data) { ?>
-                    [locationData('listings-single-page.html', 'https://lh3.googleusercontent.com/z5-N3zRKO3yt_RAAQcjrGcTZ0UMqloIVa0GgjHCCLqNQ3NsaJMCLAaShe2a_LQjkk2_vauaelg=w1080-h608-p-no-v0', "<?php echo $data->nama_agent ?>", '964 School Street, New York', '3.5', '12'), <?php echo $data->latitude ?>, <?php echo $data->longitude ?>, 2, '<i class="im im-icon-Home-5"></i>'],
+                    [locationData('listings-single-page.html', 'https://lh3.googleusercontent.com/z5-N3zRKO3yt_RAAQcjrGcTZ0UMqloIVa0GgjHCCLqNQ3NsaJMCLAaShe2a_LQjkk2_vauaelg=w1080-h608-p-no-v0', "<?php echo $data->nama_agent ?>", "<?php echo $data->no_telepon ?>", '3.5', '12'), <?php echo $data->latitude ?>, <?php echo $data->longitude ?>, 2, '<i class="im im-icon-Home-5"></i>'],
                 <?php } ?>
             ];
             google.maps.event.addListener(ib, 'domready', function() {

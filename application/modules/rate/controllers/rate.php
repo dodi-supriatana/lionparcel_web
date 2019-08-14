@@ -122,7 +122,7 @@ class rate extends MX_Controller
                     $import_xls_file = 0;
                 }
                 $inputFileName = $path . $import_xls_file;
-
+                // die($import_xls_file);
                 try {
                     $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
                     $objReader = PHPExcel_IOFactory::createReader($inputFileType);
@@ -132,6 +132,8 @@ class rate extends MX_Controller
                     $i = 0;
                     $count_add = 0;
                     $count_exists = 0;
+                    $time_now=date("Y-m-d H:i:s");
+                    $file_name=$import_xls_file;
                     foreach ($allDataInSheet as $value) {
                         if ($flag) {
                             $flag = false;
@@ -141,6 +143,7 @@ class rate extends MX_Controller
                         $data = $this->db->query('select rt.*,count(*) as total_row from rate_tabel as rt where code="'.$value['A'].'"')->row();
                         // die($data."nnahaha");
 
+                        // Data Baru
                         if ($data->total_row == 0) {
                             $inserdata[$i]['code'] = $value['A'];
                             $inserdata[$i]['product'] = $value['B'];
@@ -151,15 +154,51 @@ class rate extends MX_Controller
                             $inserdata[$i]['total'] = $value['G'];
                             $inserdata[$i]['pr'] = $value['H'];
                             $inserdata[$i]['ss'] = $value['I'];
-                            $inserdata[$i]['created_date'] = '';
+                            $inserdata[$i]['created_date'] = $time_now;
+                            
+                            $inserdatahistory[$i]['code'] = $value['A'];
+                            $inserdatahistory[$i]['product'] = $value['B'];
+                            $inserdatahistory[$i]['origin_3lc'] = $value['C'];
+                            $inserdatahistory[$i]['origin_city'] = $value['D'];
+                            $inserdatahistory[$i]['destination_3lc'] = $value['E'];
+                            $inserdatahistory[$i]['destination_city'] = $value['F'];
+                            $inserdatahistory[$i]['total'] = $value['G'];
+                            $inserdatahistory[$i]['pr'] = $value['H'];
+                            $inserdatahistory[$i]['ss'] = $value['I'];
+                            $inserdatahistory[$i]['created_date'] = $time_now;
+                            $inserdatahistory[$i]['update_by'] = $_SESSION['username'];
+                            $inserdatahistory[$i]['file_name'] = $file_name;
+                            $inserdatahistory[$i]['status'] = 'add';
+
+
                         } elseif ($data->total_row > 0 and $data->total != $value['G']) {
                             // die("sama");
-                            $where= $value['A'];
-                            $update = $value['G'];
+                            $where=array('code'=> $value['A']);
+                            $update =array('total' => $value['G'],
+                                            'pr' =>$value['H'],
+                                            'ss' =>$value['I'],
+                                            'created_date'=> $time_now
+                                            );
                             // $this->db->query("")
-                            // $result = $this->mrate->update($where,$update);
+                            $result = $this->mrate->update($where,$update);
+                            $inserdatahistory[$i]['code'] = $value['A'];
+                            $inserdatahistory[$i]['product'] = $value['B'];
+                            $inserdatahistory[$i]['origin_3lc'] = $value['C'];
+                            $inserdatahistory[$i]['origin_city'] = $value['D'];
+                            $inserdatahistory[$i]['destination_3lc'] = $value['E'];
+                            $inserdatahistory[$i]['destination_city'] = $value['F'];
+                            $inserdatahistory[$i]['total'] = $value['G'];
+                            $inserdatahistory[$i]['pr'] = $value['H'];
+                            $inserdatahistory[$i]['ss'] = $value['I'];
+                            $inserdatahistory[$i]['created_date'] = $time_now;
+                            $inserdatahistory[$i]['update_by'] = $_SESSION['username'];
+                            $inserdatahistory[$i]['file_name'] = $file_name;
+                            $inserdatahistory[$i]['status'] = 'update';
+
+                         $result_history = $this->mrate->importDataHistory($inserdatahistory);
+
                             echo "WOY ADA UPDATE";
-                            // $
+                            // die();
                             // $this->db->query('')
                         }else{
                             echo "ga ada update";
@@ -175,15 +214,17 @@ class rate extends MX_Controller
 
                     if (!empty($inserdata)) {
                          $result = $this->mrate->importData($inserdata);
+                         $result_history = $this->mrate->importDataHistory($inserdatahistory);
+
                     }
 
-                    if ($result) {
-                        echo "Imported successfully";
-                        echo $count_add . " PO added into list";
-                        echo $count_exists . " PO already exists";
-                    } else {
-                        echo "ERROR !";
-                    }
+                    // if ($result) {
+                    //     echo "Imported successfully";
+                    //     echo $count_add . " PO added into list";
+                    //     echo $count_exists . " PO already exists";
+                    // } else {
+                    //     echo "ERROR !";
+                    // }
                 } catch (Exception $e) {
                     die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
                         . '": ' . $e->getMessage());

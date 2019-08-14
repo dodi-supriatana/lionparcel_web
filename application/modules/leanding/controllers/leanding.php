@@ -26,10 +26,9 @@ class leanding extends MX_Controller
 			'script' => TRUE,
 			'script_url' => 'main_script'
 		);
-		$data['maps'] = "";
-		// $data['city']=$this->Mleanding->get_city();
+		$data['promo']=$this->db->query('SELECT * FROM promo')->result();
 		$this->load->view('layout/leanding_header');
-		$this->load->view('main');
+		$this->load->view('main',$data);
 		$this->load->view('layout/leanding_footer', $script);
 	}
 

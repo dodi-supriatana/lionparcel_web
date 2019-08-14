@@ -51,7 +51,7 @@
                               <td><?php echo $data->ss ?></td>
                               <td><?php echo $data->pr ?></td>
                               <td><?php echo $data->total ?></td>
-                           <td><a href="<?php echo base_url('ratehistory') ?>" type="button" class="btn btn-primary btn-xs">View</a></td>
+                           <td><a href="<?php echo base_url('ratehistory/detail/'.$data->code) ?>" type="button" class="btn btn-primary btn-xs">View</a></td>
                            </tr>
                            <?php } ?>
 
@@ -81,8 +81,8 @@
             <h4 class="modal-title" id="myModalLabel">Upload New Rate</h4>
          </div>
          <div class="modal-body">
-            <!-- <form action="<?php echo base_url('rate/uploadData') ?>" method="POST" enctype="multipart/form-data"> -->
-            <form action="<?php echo base_url('perview') ?>" method="POST" enctype="multipart/form-data">
+            <form action="<?php echo base_url('rate/uploadData') ?>" method="POST" enctype="multipart/form-data">
+            <!-- <form action="<?php echo base_url('perview') ?>" method="POST" enctype="multipart/form-data"> -->
 
                <div class="row">
                   <div class="col-md-12">

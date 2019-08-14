@@ -6,7 +6,7 @@
 			* {
 				box-sizing: border-box;
 			}
-			
+
 			body {
 				font: 14px Arial;
 			}
@@ -27,7 +27,7 @@
 			input[type=text] {
 				background-color: #fff;
 				width: 100%;
-				border-radius:0;
+				border-radius: 0;
 			}
 
 			input[type=submit] {
@@ -68,7 +68,7 @@
 				color: #ffffff;
 			}
 		</style>
- 
+
 
 		<div class="main-search-container centered" data-background-image="assets/leandingpage/images/lion_man.png">
 			<div class="main-search-inner">
@@ -88,8 +88,7 @@
 									<!-- START INI FORM ORIGIN by: Alam -->
 									<div class="main-search-input-item">
 										<!-- <select class="itemName" name="origin" placeholder="Select Origin" style="font-size:20px;"></select> -->
-										<input id="myInput" type="text" name="myCountry" placeholder=" Origin" style="height: 29px; " required autocomplete="off" 
-										onkeyup="var start = this.selectionStart;
+										<input id="myInput" type="text" name="myCountry" placeholder=" Origin" style="height: 29px; " required autocomplete="off" onkeyup="var start = this.selectionStart;
 										var end = this.selectionEnd;
 										this.value = this.value.toUpperCase();
 										this.setSelectionRange(start, end);
@@ -101,8 +100,7 @@
 									<!-- START INI FORM DESTINATION by: Alam -->
 									<div class="main-search-input-item">
 										<!-- <select class="itemName1" name="destination" placeholder="Select Destination"></select> -->
-										<input id="myInput2" type="text" name="myCountry2" placeholder=" Destination" style="height: 29px;" required autocomplete="off"
-										onkeyup="var start = this.selectionStart;
+										<input id="myInput2" type="text" name="myCountry2" placeholder=" Destination" style="height: 29px;" required autocomplete="off" onkeyup="var start = this.selectionStart;
 										var end = this.selectionEnd;
 										this.value = this.value.toUpperCase();
 										this.setSelectionRange(start, end);
@@ -170,59 +168,18 @@
 					</div>
 				</div>
 
-				<!-- Item -->
-				<div class="fw-carousel-item">
+				<?php foreach ($promo as $data) { ?>
+					<div class="fw-carousel-item">
 					<div class="category-box-container">
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/Promo_Partner_lionparcel_seller.jpg" style="height: 200px;">
+						<!-- <div class="listing-badge now-open">Hot Promo</div> -->
+						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="<?php echo $data->promo_image ?>" style="height: 200px;">
 						</a>
 					</div>
-				</div> <!-- Item -->
-				<div class="fw-carousel-item">
-					<div class="category-box-container">
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/Promo_Partner_Copy_LIONPARCEL.jpg" style="height: 200px;">
-						</a>
-					</div>
-				</div> <!-- Item -->
-
-				<div class="fw-carousel-item">
-					<div class="category-box-container">
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/slide-lion-parcel.jpg" style="height: 200px;">
-						</a>
-					</div>
-				</div> <!-- Item -->
-				<div class="fw-carousel-item">
-					<div class="category-box-container">
-						<a href="listings-half-screen-map-grid-1.html" class="category-box" data-background-image="assets/leandingpage/images/promo/duit_horisontal2.jpg" style="height: 200px;">
-						</a>
-					</div>
-				</div> <!-- Item -->
-
-
+				</div>
+				<?php } ?>
 			</div>
 		</div>
 		<!-- promo Boxes / End -->
-
-
-		<!-- <div class="parallax" data-background="<?php echo base_url('assets/leandingpage/images/promo/slider-03.jpg') ?>" data-color="#36383e" data-color-opacity="0.6" data-img-width="800" data-img-height="505">
-
-		
-			<div class="text-content white-font">
-				<div class="container">
-
-					<div class="row">
-						<div class="col-lg-6 col-sm-8">
-							<h2>Streamline Your Business</h2>
-							<p>We’re full-service, local agents who know how to find people and home each together. We use online tools with an unmatched search capability to make you smarter and faster.</p>
-							<a href="listings-list-with-sidebar.html" class="button margin-top-25">Get Started</a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			
-
-		</div> -->
 
 
 		<!-- Info Section -->
@@ -520,7 +477,7 @@
 			/*An array containing all the country names in the world:*/
 			// var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
-		// console.log('data', datas);
+			// console.log('data', datas);
 
 			var arr = null;
 			$.ajax({
@@ -547,8 +504,8 @@
 		</script>
 
 
-<script>
-	function autocomplete(inp, arr) {
+		<script>
+			function autocomplete(inp, arr) {
 				/*the autocomplete function takes two arguments,
 				the text field element and an array of possible autocompleted values:*/
 				var currentFocus;
@@ -669,7 +626,7 @@
 			/*An array containing all the country names in the world:*/
 			// var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
-		// console.log('data', datas);
+			// console.log('data', datas);
 
 			var arr = null;
 			$.ajax({
@@ -693,4 +650,4 @@
 
 			/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 			autocomplete(document.getElementById("myInput2"), arr);
-</script>
+		</script>

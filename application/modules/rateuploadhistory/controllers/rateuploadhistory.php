@@ -22,9 +22,9 @@ class rateuploadhistory extends MX_Controller
             'script' => TRUE,
             'script_url' => 'main_script'
         );
-        // $header['menu'] = $this->MGmenu->get_menu();
+        $data['data'] = $this->db->query("SELECT count(*) as total_update,rth.update_by,rth.file_name,rth.created_date FROM rate_tabel_history rth GROUP BY rth.file_name")->result();
         $this->load->view('layout/header');
-        $this->load->view('main');
+        $this->load->view('main',$data);
         $this->load->view('layout/footer', $script);
     }
 

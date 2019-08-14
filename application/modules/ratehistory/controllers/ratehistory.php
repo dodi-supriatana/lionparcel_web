@@ -1,4 +1,4 @@
-<?php
+<?php 
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class ratehistory extends MX_Controller
@@ -16,15 +16,16 @@ class ratehistory extends MX_Controller
         $this->load->model('mpolist');
     }
 
-    public function index()
+    public function detail($code='')
     {
         $script = array(
             'script' => TRUE,
             'script_url' => 'main_script'
         );
-        // $header['menu'] = $this->MGmenu->get_menu();
+        $data['data'] = $this->db->query("SELECT * FROM rate_tabel_history rth where code='".$code."' ORDER BY rth.created_date desc")->result();
+        $data['data_header'] = $this->db->query("SELECT * FROM rate_tabel rh where code='".$code."'")->row();     
         $this->load->view('layout/header');
-        $this->load->view('main');
+        $this->load->view('main',$data);
         $this->load->view('layout/footer', $script);
     }
 

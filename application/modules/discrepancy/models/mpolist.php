@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class mrate extends CI_Model
+class mpolist extends CI_Model
 {
 
-    var $table = 'rate_tabel';
+    var $table = 't_po_header';
     var $column_order = array('po_no' ); //set column field database for datatable orderable
     var $column_search = array('po_no'); //set column field database for datatable searchable just firstname , lastname , address are searchable
     var $order = array('ctrl' => 'desc'); // default order 
@@ -110,7 +110,7 @@ class mrate extends CI_Model
 
     public function importData($data) {
         
-        $res = $this->db->insert_batch('rate_tabel',$data);
+        $res = $this->db->insert_batch('t_po_header',$data);
         if($res){
             return TRUE;
         }else{
@@ -118,14 +118,10 @@ class mrate extends CI_Model
         }
  
     }
-    public function importDataHistory($data) {
+
+    public function cek_po_ganda($po_no){
+        $query=$this->db->query("SELECT * from t_po_header where po_no='".$po_no."'");
         
-        $res = $this->db->insert_batch('rate_tabel_history',$data);
-        if($res){
-            return TRUE;
-        }else{
-            return FALSE;
-        }
- 
+        return $query->num_rows();
     }
 }

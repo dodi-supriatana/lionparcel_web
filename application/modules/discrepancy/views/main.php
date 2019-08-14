@@ -1,6 +1,5 @@
 <li><a href="#">Home</a></li>
-<li>Rate</li>
-<li class="active">upload Document History</li>
+<li class="active">Discrepancy</li>
 </ul>
 <!-- END BREADCRUMB -->
 
@@ -9,20 +8,13 @@
    <div id="content">
       <!-- row -->
       <div class="row">
-         <!-- col -->
-         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+      <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
             <h1 class="page-title txt-color-blueDark">
                <!-- PAGE HEADER -->
-               <i class="fa-fw fa fa-usd"></i>
-               Upload History
+               <i class="fa-fw fa fa-refresh"></i>
+               Discrepancy
             </h1>
          </div>
-
-         <!-- end col -->
-         <!-- right side of the page with the sparkline graphs -->
-         <!-- col -->
-
-         <!-- end col -->
       </div>
       <!-- PAGE CONTENT WRAPPER -->
       <div class="page-content-wrap">
@@ -30,38 +22,113 @@
          <div class="row">
             <div class="col-md-12">
 
+            <div class="col-md-3">
+
+            <!-- START WIDGET MESSAGES -->
+            <div style="overflow: hidden; padding-top: 0; min-height: auto;" class="widget widget-default widget-item-icon">
+            <div class="widget-item-left" style="background-color: #ffba00;margin-bottom: -8px;margin-left: 0px;width: 80px;">
+               <span class="fa fa-download" style="color:#ffff"></span>
+            </div>
+            <div class="widget-data">
+               <div class="widget-int num-count" style="color:#6c7074"><?php echo $counting->update ?></div>
+               <div class="widget-title" style="color:#ffba00">Updated</div>
+               <div class="widget-subtitle">collected data
+                  <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
+               </div>
+               <!-- <div class="widget-subtitle">In your mailbox</div> -->
+            </div>
+
+            </div>
+            <!-- END WIDGET MESSAGES -->
+
+         </div>
+
+         <div class="col-md-3">
+
+         <!-- START WIDGET MESSAGES -->
+         <div style="overflow: hidden; padding-top: 0; min-height: auto;" class="widget widget-default widget-item-icon">
+         <div class="widget-item-left" style="background-color: #00ca8a;margin-bottom: -8px;margin-left: 0px;width: 80px;">
+            <span class="fa fa-check" style="color:#ffff"></span>
+         </div>
+         <div class="widget-data">
+            <div class="widget-int num-count" style="color:#6c7074"><?php echo $counting->add ?></div>
+            <div class="widget-title" style="color:#00ca8a">Added</div>
+            <div class="widget-subtitle">collected data
+               <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
+            </div>
+            <!-- <div class="widget-subtitle">In your mailbox</div> -->
+         </div>
+
+         </div>
+         <!-- END WIDGET MESSAGES -->
+
+      </div>
+
+      <div class="col-md-3">
+
+         <!-- START WIDGET MESSAGES -->
+         <div style="overflow: hidden; padding-top: 0; min-height: auto;" class="widget widget-default widget-item-icon">
+         <div class="widget-item-left" style="background-color: #ea0008;margin-bottom: -8px;margin-left: 0px;width: 80px;">
+            <span class="fa fa-times" style="color:#ffff"></span>
+         </div>
+         <div class="widget-data">
+            <div class="widget-int num-count" style="color:#6c7074">0</div>
+            <div class="widget-title" style="color:#ea0008">Removed</div>
+            <div class="widget-subtitle">collected data
+               <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
+            </div>
+            <!-- <div class="widget-subtitle">In your mailbox</div> -->
+         </div>
+
+         </div>
+         <!-- END WIDGET MESSAGES -->
+
+      </div>
+
                <!-- START DEFAULT DATATABLE -->
                <div class="panel panel-default">
                   <div class="panel-heading">
-                     <!-- <h3 class="panel-controls"><button class="btn btn-success">Upload New Rate</button>&nbsp<button class="btn btn-primary">Upload History</button></h3> -->
+                     <!-- <h3 class="panel-title"><a href="<?php echo base_url('rate') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:12px; width:200px; border-radius: 5px;" type="button" class="btn btn-danger"><span class="fa fa-download"></span> Click Here To Update Rate</a></h3> -->
+                     <ul class="panel-controls">
+                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                     </ul>
                   </div>
                   <div class="panel-body">
                      <table class="table datatable">
                         <thead>
                            <tr>
-                              <th>Date</th>
-                              <th>Document Name</th>
-                              <!-- <th>Total Row</th> -->
-                              <th>Updated Data</th>
-                              <th>Update by</th>
-                              <th>Download Document</th>
-                              <!-- <th>History</th> -->
+                              <th>Product</th>
+                              <th>Origin</th>
+                              <th>Destination</th>
+                              <!-- <th>Old Price</th> -->
+                              <th>Status</th>
+                              <th>New Price</th>
                            </tr>
                         </thead>
                         <tbody>
-                           <?php foreach ($data as $key) { ?>
-                           
-                           
-                           <tr>
-                              <td><?php echo $key->created_date ?></td>
-                              <td><?php echo $key->file_name ?></td>
-                              <td><a class="btn btn-primary btn-xs" href="<?php echo base_url('discrepancy/detail/'.$key->file_name) ?>" ><?php echo $key->total_update ?> Rows</a></td>
-                              <!-- <td><center>3</center></td> -->
-                              <td><?php echo $key->update_by ?></td>
-                              <td><a href="<?php echo base_url('assets/document/'.$key->file_name) ?>" type="button" class="btn btn-info active">Download</a></td>
-                           </tr>
+                           <?php foreach ($data as $data) { 
+                              // if ($data->new_price > $data->old_price) {
+                              //    $panah='<span class="label label-success"><i class="fa fa-sort-asc fa-lg" style="color: white;"></i> <b> Updated</b></span>';
+                              // }else{
+                              //    $panah='<span class="label label-danger"><i class="fa fa-sort-desc fa-lg" style="color: white;"></i> <b> Updated</b></span>';                                 
+                              // }
+                              ?>
+                              <tr>
+                                 <td><?php echo $data->product ?></td>
+                                 <td><?php echo $data->origin_city ?></td>
+                                 <td><?php echo $data->destination_city ?></td>
+                                 <!-- <td><?php echo $data->old_price ?></td> -->
+                                 <td><?php if ($data->status != 'add') {
+                                                         echo '<span class="label label-success"><i class="fa fa-sort-asc fa-lg" style="color: white;"></i> <b> Updated</b></span>';
+                                                      } else {
+                                                         echo '<span class="label label-danger">Add</span>';
+                                                      } ?></td>
+                                 <!-- <td><a data-toggle="tooltip" data-placement="right" title="" data-original-title="View Detail" href="<?php echo base_url() ?>" ><span class="label label-primary" ><i class="glyphicon glyphicon-user"></i></span></a></td> -->
+                                 <td><?php echo $data->total ?></td>                              
+                              </tr>
                            <?php } ?>
-                           </tr>
                         </tbody>
                      </table>
                   </div>

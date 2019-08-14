@@ -47,8 +47,8 @@
                             <img src="<?php echo base_url('assets/apps/assets/images/users/avatar.jpg') ?>" alt="John Doe" />
                         </div>
                         <div class="profile-data">
-                            <div class="profile-data-name">Dodi Supriatna</div>
-                            <div class="profile-data-title">Administrator</div>
+                            <div class="profile-data-name"><?php echo $this->session->userdata('username'); ?></div>
+                            <div class="profile-data-title"><?php echo $this->session->userdata('level'); ?></div>
                         </div>
                         <div class="profile-controls">
                             <a href="pages-profile.html" class="profile-control-left"><span class="fa fa-info"></span></a>
@@ -67,6 +67,7 @@
                         <li><a href="<?php echo base_url('rate') ?>"><span class="fa fa-usd"></span> Rate</a></li>
                         <li><a href="<?php echo base_url('zona') ?>"><span class="fa fa-globe"></span> Zona</a></li>
                         <li><a href="<?php echo base_url('promo') ?>"><span class="fa fa-globe"></span> Promo</a></li>
+                        <li><a href="<?php echo base_url('competitor') ?>"><span class="fa fa-globe"></span> Competitor</a></li>
                     </ul>
 
                 </li>

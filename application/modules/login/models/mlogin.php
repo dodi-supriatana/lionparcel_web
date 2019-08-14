@@ -17,13 +17,11 @@ class Mlogin extends CI_Model
     }
 
     function default_user_group($user_id)
-    {   
-        $this->db->from($this->table);
-        $this->db->join('user_group ug','ug.user_id=m_user.user_id');
-        $this->db->join('groups g','g.group_id=ug.group_id','left');
-        $this->db->where('ug.user_id', $user_id);
-        $query = $this->db->get();
+    {
+        // die($user_id);
+        $query = $this->db->query("SELECT * FROM m_user u
+       LEFT JOIN tb_level l on u.id_level=l.id_level
+       WHERE u.id_user='$user_id'");
         return $query->result();
-
     }
 }

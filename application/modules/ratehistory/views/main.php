@@ -15,7 +15,7 @@
            <!-- START TIMELINE FILTER -->
            <div class="panel panel-default">
               <div class="panel-body">
-                 <h3>AMBON To LARANTUKA</h3>
+                 <h3><?php echo $data_header->product ?> From <?php echo $data_header->origin_city ?> To <?php echo $data_header->destination_city ?></h3>
 
               </div>
            </div>
@@ -36,42 +36,29 @@
                  <div class="timeline-date">2014</div>
               </div> -->
               <!-- END TIMELINE ITEM -->
-               <!-- START TIMELINE ITEM -->
+              <!-- START TIMELINE ITEM -->
+  <?php foreach ($data as $key) { ?>
+     
+  
               <div class="timeline-item timeline-item-right">
-                 <div class="timeline-item-info">2019-04-23 10:18:18</div>
+                 <div class="timeline-item-info"><?php echo $key->created_date ?></div>
                  <div class="timeline-item-icon"><span class="fa fa-globe"></span></div>
                  <div class="timeline-item-content">
                     <div class="timeline-heading">
-                    <!-- AMBON To LARANTUKA<br> -->
-                    Price Updated be <strong> 82,000 </strong> by Administrator
-                    
+                       <!-- AMBON To LARANTUKA<br> -->
+                       Price Updated be <strong> <?php echo $key->total ?> </strong> by <?php echo $key->update_by ?>
+
                     </div>
-                   
+
                  </div>
                  <!-- END TIMELINE ITEM -->
                  <!-- START TIMELINE ITEM -->
-                 
+
                  <!-- END TIMELINE ITEM -->
               </div>
               <!-- END TIMELINE -->
               <!-- START TIMELINE ITEM -->
-              <div class="timeline-item timeline-item-right">
-                 <div class="timeline-item-info">2019-06-25 01:18:18</div>
-                 <div class="timeline-item-icon"><span class="fa fa-globe"></span></div>
-                 <div class="timeline-item-content">
-                    <div class="timeline-heading">
-                    <!-- AMBON To LARANTUKA<br> -->
-                    Price Updated be <strong>59.200</strong> by Administrator
-                    
-                    </div>
-                   
-                 </div>
-                 <!-- END TIMELINE ITEM -->
-                 <!-- START TIMELINE ITEM -->
-                 
-                 <!-- END TIMELINE ITEM -->
-              </div>
-              <!-- END TIMELINE -->
+              <?php } ?>
 
            </div>
         </div>
