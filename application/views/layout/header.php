@@ -29,6 +29,9 @@
     <!-- START PAGE CONTAINER -->
     <div class="page-container">
 
+
+
+
         <!-- START PAGE SIDEBAR -->
         <div class="page-sidebar">
             <!-- START X-NAVIGATION -->
@@ -57,6 +60,7 @@
                     </div>
                 </li>
                 <li class="xn-title">Navigation</li>
+                <?php if ($_SESSION['id_level'] == 3) { ?>
                 <li class="active">
                     <a href="<?php echo base_url('dashboard') ?>"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
                 </li>
@@ -90,6 +94,21 @@
 
                 </li>
 
+                <?php } else { ?>
+                <li class="active">
+                    <a href="<?php echo base_url('dashboardagen') ?>"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
+                </li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Check Transaction</span></a>
+                    <ul>
+                        <!-- <li><a href="<?php echo base_url('price') ?>"><span class="fa fa-image"></span> Price</a></li>
+                        <li><a href="<?php echo base_url('tracking') ?>"><span class="fa fa-image"></span> Tracking</a></li> -->
+                        <li><a href="<?php echo base_url('listpickup') ?>"><span class="fa fa-user"></span> Delivered Status</a></li>
+                    </ul>
+
+                </li>
+                <?php } ?>
+
                 <!-- <li class="xn-openable">
                     <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">CMS Setting</span></a>
                     <ul>
@@ -106,6 +125,7 @@
             </ul>
             <!-- END X-NAVIGATION -->
         </div>
+
         <!-- END PAGE SIDEBAR -->
 
         <!-- PAGE CONTENT -->
