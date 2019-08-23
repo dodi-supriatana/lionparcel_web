@@ -71,6 +71,7 @@
                         <li><a href="<?php echo base_url('rate') ?>"><span class="fa fa-usd"></span> Rate</a></li>
                         <li><a href="<?php echo base_url('zona') ?>"><span class="fa fa-globe"></span> Zona</a></li>
                         <li><a href="<?php echo base_url('promo') ?>"><span class="fa fa-globe"></span> Promo</a></li>
+                        <li><a href="<?php echo base_url('news') ?>"><span class="fa fa-globe"></span> News</a></li>
                         <li><a href="<?php echo base_url('competitor') ?>"><span class="fa fa-globe"></span> Competitor</a></li>
                     </ul>
 

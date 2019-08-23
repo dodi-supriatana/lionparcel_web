@@ -14,7 +14,7 @@
             <h1 class="page-title txt-color-blueDark">
                <!-- PAGE HEADER -->
                <i class="fa-fw fa fa-plus"></i>
-               Promo Management Form
+               Promo
             </h1>
          </div>
 
@@ -30,7 +30,7 @@
          <div class="row">
             <div class="col-md-12">
 
-            <form class="form-horizontal">
+            <form action="<?php echo base_url('add_promo/add') ?>" method="POST" class="form-horizontal" enctype="multipart/form-data">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title"><strong>Fill the promo</strong> form</h3>
@@ -50,7 +50,7 @@
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-edit"></span></span>
-                                                        <input type="text" class="form-control" placeholder="Input promo name" />
+                                                        <input type="text" name="name" class="form-control" placeholder="Input promo name" />
                                                     </div>                                            
                                                     
                                                 </div>
@@ -62,7 +62,7 @@
                                                 <div class="col-md-9 col-xs-12">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-paragraph"></span></span>
-                                                        <input type="text" class="form-control" placeholder="Input the highlight" />
+                                                        <input type="text" name="highlight" class="form-control" placeholder="Input the highlight" />
                                                     </div>            
                                                     <!-- <span class="help-block">Password field sample</span> -->
                                                 </div>
@@ -74,7 +74,7 @@
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                                        <input type="text" class="form-control datepicker" placeholder="Choose the start date">                                            
+                                                        <input type="text" name="start_date" class="form-control datepicker" placeholder="Choose the start date">                                            
                                                     </div>
                                                     <span class="help-block">Click on input field to get Promo Start</span>
                                                 </div>
@@ -84,7 +84,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Image</label>
                                                 <div class="col-md-9">                                                                                                                                        
-                                                    <input type="file" class="fileinput btn-primary" name="filename" id="filename" title="Browse file"/>
+                                                    <input type="file" class="fileinput btn-primary" name="my_file" id="filename" title="Browse file"/>
                                                     <span class="help-block">Choosing image</span>
                                                 </div>
                                             </div>
@@ -97,7 +97,7 @@
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                                        <input type="text" class="form-control datepicker" placeholder="Choose the end date">                                            
+                                                        <input type="text" name="end_date" class="form-control datepicker" placeholder="Choose the end date">                                            
                                                     </div>
                                                     <span class="help-block">Click on input field to get Promo End</span>
                                                 </div>
@@ -119,7 +119,7 @@
 
                                 </div>
                                 <div class="panel-footer">                  
-                                    <button class="btn btn-primary pull-right">Submit</button>
+                                    <button type="submit" class="btn btn-primary pull-right">Submit</button>
                                 </div>
                             </div>
                             </form>

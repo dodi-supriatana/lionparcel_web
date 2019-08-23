@@ -1,11 +1,11 @@
-<?php 
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
- 
-class competitor extends MX_Controller
+
+class competitordetail extends MX_Controller
 {
     private $filename = "import_data";
 
-    function __construct() 
+    function __construct()
     {
         parent::__construct();
         //  if($this->session->userdata('status') != "login"){
@@ -16,17 +16,18 @@ class competitor extends MX_Controller
         $this->load->model('mrate');
     }
 
-    public function index()
+    public function view($origin = "", $destination = "")
     {
         $script = array(
             'script' => TRUE,
             'script_url' => 'main_script'
         );
         // $header['menu'] = $this->MGmenu->get_menu();
-        $data['price']=$this->db->query('select origin_city,destination_city,origin_3lc,destination_3lc from competitor
-        GROUP BY destination_3lc,origin_3lc')->result();
+        $data['competitor'] = $this->db->query("SELECT * FROM competitor c WHERE c.origin_3lc='".$origin."' and c.destination_3lc='".$destination."' and product='REG'  ORDER BY price asc")->result();
+        $data['lion'] = $this->db->query("SELECT * FROM rate_tabel c WHERE c.origin_3lc='".$origin."' and c.destination_3lc='".$destination."' and product='REGPACK' ORDER BY total asc")->result();
+    //    $data['title']=$this->db->query("SELECT origin_city,destination_city FROM rate_tabel c WHERE c.origin_3lc='".$origin."' and c.destination_3lc='".$destination."' ORDER BY total asc LIMIT 1")->row();
         $this->load->view('layout/header');
-        $this->load->view('main',$data);
+        $this->load->view('main', $data);
         $this->load->view('layout/footer', $script);
     }
 
@@ -60,7 +61,7 @@ class competitor extends MX_Controller
             $row[] = $project->po_desc;
             $row[] = '<img src="' . base_url($project->logo) . '" style="width: 16px" > ' . $project->vendor_name;
             // $row[] = $project->group_name;
-            $row[]='<center><span class="label label-primary" data-toggle="modal" data-target="#doc_pos">view Document List</span></center>';
+            $row[] = '<center><span class="label label-primary" data-toggle="modal" data-target="#doc_pos">view Document List</span></center>';
             $row[] = $status;
             $row[] = '<div class="progress progress-xs" data-progressbar-value="' . $project->progress . '"><div class="progress-bar"></div></div>';
             //add html for action
@@ -68,11 +69,9 @@ class competitor extends MX_Controller
             if ($project->po_active == '3') {
                 // $row[] = '<center><a href="' . base_url('po_detail/index/' . $project->po_no) . '" target="_blank" rel="tooltip" title="Details" data-placement="top" data-original-title="Approve" style="color: white;"><span class="badge bg-color-greenLight"><i class="fa fa-eye"></i></span></a><a href="' . base_url('assets/doc/BAST_PO2019005.doc'). '" target="_blank" rel="tooltip" title="Generate BAST" data-placement="top" data-original-title="Approve" style="color: white;"><span class="badge bg-color-orange"><i class="fa fa-print"></i></span></a>';
                 $row[] = '<center><a href="' . base_url('po_detail/index/' . $project->po_no) . '" target="_blank" rel="tooltip" title="Details" data-placement="top" data-original-title="Approve" style="color: white;"><span class="badge bg-color-greenLight"><i class="fa fa-eye"></i></span></a>';
-
             } elseif ($project->po_active == '4') {
                 // $row[] = '<center><a href="' . base_url('po_detail/index/' . $project->po_no) . '" target="_blank" rel="tooltip" title="Details" data-placement="top" data-original-title="Approve" style="color: white;"><span class="badge bg-color-greenLight"><i class="fa fa-eye"></i></span></a><a href="' . base_url('po_detail/index/' . $project->po_no) . '" target="_blank" rel="tooltip" title="SUBMIT INVOICE" data-placement="top" data-original-title="Approve" style="color: white;"><span class="badge bg-color-darken"><i class="fa fa-send-o"></i></span></a>';
                 $row[] = '<center><a href="' . base_url('po_detail/index/' . $project->po_no) . '" target="_blank" rel="tooltip" title="Details" data-placement="top" data-original-title="Approve" style="color: white;"><span class="badge bg-color-greenLight"><i class="fa fa-eye"></i></span></a>';
-            
             } else {
                 $row[] = '<center><a href="' . base_url('po_detail/index/' . $project->po_no) . '" target="_blank" rel="tooltip" title="Details" data-placement="top" data-original-title="Approve" style="color: white;"><span class="badge bg-color-greenLight"><i class="fa fa-eye"></i></span></a>';
             }
@@ -139,7 +138,7 @@ class competitor extends MX_Controller
                             continue;
                         }
 
-                        $data = $this->db->query('select rt.*,count(*) as total_row from rate_tabel as rt where code="'.$value['A'].'"')->row();
+                        $data = $this->db->query('select rt.*,count(*) as total_row from rate_tabel as rt where code="' . $value['A'] . '"')->row();
                         // die($data."nnahaha");
 
                         if ($data->total_row == 0) {
@@ -155,14 +154,14 @@ class competitor extends MX_Controller
                             $inserdata[$i]['created_date'] = '';
                         } elseif ($data->total_row > 0 and $data->total != $value['G']) {
                             // die("sama");
-                            $where= $value['A'];
+                            $where = $value['A'];
                             $update = $value['G'];
                             // $this->db->query("")
                             // $result = $this->mrate->update($where,$update);
                             echo "WOY ADA UPDATE";
                             // $
                             // $this->db->query('')
-                        }else{
+                        } else {
                             echo "ga ada update";
                         }
 
@@ -175,7 +174,7 @@ class competitor extends MX_Controller
                     // die();
 
                     if (!empty($inserdata)) {
-                         $result = $this->mrate->importData($inserdata);
+                        $result = $this->mrate->importData($inserdata);
                     }
 
                     if ($result) {

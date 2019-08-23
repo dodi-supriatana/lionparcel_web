@@ -1,5 +1,5 @@
 <li><a href="#">Home</a></li>
-<li class="active">Competitor</li>
+<li class="active">Competitor Comparison</li>
 </ul>
 
 
@@ -7,11 +7,11 @@
    <div id="content">
       <div class="row">
       
-         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h1 class="page-title txt-color-blueDark">
                <!-- PAGE HEADER -->
                <i class="fa-fw fa fa-usd"></i>
-               Competitor
+                Comparison <?php //echo $title->origin_city." to ".$title->destination_city ?>
             </h1>
          </div>
 
@@ -22,35 +22,77 @@
       <div class="page-content-wrap">
 
          <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
 
                <!-- START DEFAULT DATATABLE -->
                <div class="panel panel-default">
                   <div class="panel-heading">
-                     <h3 class="panel-controls"><a href="javascript:void(0);"  data-toggle="modal" data-target="#myModal" class="btn btn-success">Upload New Competitor Rate</button>&nbsp<a href="<?php echo base_url('rateuploadhistory') ?>" class="btn btn-primary" style="display: none;">Upload History</a></h3>
+                     <!-- <h3 class="panel-controls"><a href="javascript:void(0);"  data-toggle="modal" data-target="#myModal" class="btn btn-success">Upload New Competitor Rate</button>&nbsp<a href="<?php echo base_url('rateuploadhistory') ?>" class="btn btn-primary" style="display: none;">Upload History</a></h3> -->
+                     <center><img src="<?php echo base_url('assets/icon/logolionred.png') ?>" width="170px"></center>
                   </div>
                   <div class="panel-body">
                      <table class="table datatable">
                         <thead>
                            <tr>
                               <!-- <th>Company</th> -->
-                              <!-- <th>Product</th> -->
+                              <th>Product</th>
                               <th>Origin City</th>
                               <th>Destination</th>
-                              <th>View</th>
+                              <th>Price</th>
                               <!-- <th>Total</th> -->
                               <!-- <th>History</th> -->
                            </tr>
                         </thead>
                         <tbody>
-                           <?php foreach ($price as $data) { ?>
+                           <?php foreach ($lion as $data) { ?>
                            <tr>
                               <!-- <td><?php echo $data->company ?></td> -->
-                              <!-- <td><?php echo $data->product ?></td> -->
+                              <td><?php echo $data->product ?></td>
                               <td><?php echo $data->origin_city ?></td>
                               <td><?php echo $data->destination_city ?></td>
-                              <!-- <td><?php echo $data->price ?></td> -->
-                           <td><a href="<?php echo base_url('competitordetail/view/'.$data->origin_3lc.'/'.$data->destination_3lc) ?>" type="button" class="btn btn-primary btn-xs">View</a></td>
+                              <td><?php echo $data->total ?></td>
+                           <!-- <td><a href="<?php echo base_url('ratehistory') ?>" type="button" class="btn btn-primary btn-xs">View</a></td> -->
+                           </tr>
+                           <?php } ?>
+
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+               <!-- END DEFAULT DATATABLE -->
+
+            </div>
+            <div class="col-md-6">
+
+               <!-- START DEFAULT DATATABLE -->
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                     <!-- <h3 class="panel-controls"><a href="javascript:void(0);"  data-toggle="modal" data-target="#myModal" class="btn btn-success">Upload New Competitor Rate</button>&nbsp<a href="<?php echo base_url('rateuploadhistory') ?>" class="btn btn-primary" style="display: none;">Upload History</a></h3> -->
+                     <center style="font-size: x-large;"><b>COMPETITOR</b></center>
+                  </div>
+                  <div class="panel-body">
+                     <table class="table datatable">
+                        <thead>
+                           <tr>
+                              <th>Company</th>
+                              <th>Product</th>
+                              <th>Origin City</th>
+                              <th>Destination</th>
+                              <!-- <th>View</th> -->
+                              <th>Price</th>
+                              <!-- <th>History</th> -->
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <?php foreach ($competitor as $data) { ?>
+                           <tr>
+                              <td><?php echo $data->company ?></td>
+                              <td><?php echo $data->product ?></td>
+                              <td><?php echo $data->origin_city ?></td>
+                              <td><?php echo $data->destination_city ?></td>
+                              <td><?php echo $data->price ?></td>
+                           <!-- <td><a href="<?php echo base_url('ratehistory') ?>" type="button" class="btn btn-primary btn-xs">View</a></td> -->
                            </tr>
                            <?php } ?>
 
