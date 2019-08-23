@@ -27,7 +27,7 @@ class competitordetail extends MX_Controller
         $data['lion'] = $this->db->query("SELECT * FROM rate_tabel c WHERE c.origin_3lc='".$origin."' and c.destination_3lc='".$destination."' and product='REGPACK' ORDER BY total asc")->result();
     //    $data['title']=$this->db->query("SELECT origin_city,destination_city FROM rate_tabel c WHERE c.origin_3lc='".$origin."' and c.destination_3lc='".$destination."' ORDER BY total asc LIMIT 1")->row();
         $this->load->view('layout/header');
-        $this->load->view('main', $data);
+        $this->load->view('main2', $data);
         $this->load->view('layout/footer', $script);
     }
 
