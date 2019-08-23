@@ -32,7 +32,7 @@
                <!-- START DEFAULT DATATABLE -->
                <div class="panel panel-default">
                   <div class="panel-heading">
-                  <a class="btn btn-warning" href="<?php echo base_url('add_promo') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:12px; width:150px; border-radius: 5px;"><span class="fa fa-plus" ></span> Add News</a>
+                  <a class="btn btn-warning" href="<?php echo base_url('add_news') ?>" style=" background:#d7282d; border-color:#d7282d; border-width: 2px; color: #fff; font-size:12px; width:150px; border-radius: 5px;"><span class="fa fa-plus" ></span> Add News</a>
                      <ul class="panel-controls">
                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                         <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -59,7 +59,7 @@
                                  <td style="width:50%"><?php echo $data->news_description ?></td>
                                  <td style="width:10%"><?php echo $data->news_date ?></td>
                                  <!-- <td><?php echo $data->news_status ?></td> -->
-                                 <td style="width:5%"><img src="<?php echo base_url('assets/icon/download_file.png') ?>" style="width: 20px;"></td>
+                                 <td style="width:5%"><a href="<?php echo base_url($data->file) ?>"> <img src="<?php echo base_url('assets/icon/download_file.png') ?>" style="width: 20px;"></a></td>
                               </tr>
                            <?php } ?>
                         </tbody>

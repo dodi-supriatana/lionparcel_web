@@ -16,9 +16,9 @@
         <div class="widget-data">
           <div class="widget-int num-count" style="color:#6c7074">92,710</div>
           <div class="widget-title" style="color:#00ca8a">Completed</div>
-          <div class="widget-subtitle">collected data
+          <!-- <div class="widget-subtitle">collected data
             <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
-          </div>
+          </div> -->
           <!-- <div class="widget-subtitle">In your mailbox</div> -->
         </div>
 
@@ -36,9 +36,9 @@
         <div class="widget-data">
           <div class="widget-int num-count" style="color:#6c7074">1,410</div>
           <div class="widget-title" style="color:#FEB162">Shipping Process</div>
-          <div class="widget-subtitle">collected data
+          <!-- <div class="widget-subtitle">collected data
             <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
-          </div>
+          </div> -->
           <!-- <div class="widget-subtitle">In your mailbox</div> -->
         </div>
 
@@ -56,9 +56,9 @@
         <div class="widget-data">
           <div class="widget-int num-count" style="color:#6c7074">216</div>
           <div class="widget-title" style="color:red">Package Canceled</div>
-          <div class="widget-subtitle">collected data
+          <!-- <div class="widget-subtitle">collected data
             <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
-          </div>
+          </div> -->
           <!-- <div class="widget-subtitle">In your mailbox</div> -->
         </div>
 
@@ -77,9 +77,9 @@
         <div class="widget-data">
           <div class="widget-int num-count" style="color:#6c7074">1,490</div>
           <div class="widget-title" style="color:#4dc6f4;">Total Agen</div>
-          <div class="widget-subtitle">Registered
+          <!-- <div class="widget-subtitle">Registered
             <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
-          </div>
+          </div> -->
           <!-- <div class="widget-subtitle">In your mailbox</div> -->
         </div>
 

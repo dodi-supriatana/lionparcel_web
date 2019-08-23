@@ -1,0 +1,31 @@
+TT.
+1.jelaskan apa itu TT, (Trouble Ticket) Aplikasi yang menangani masalah yang ada pada suatu perusahaan
+2. Fitur di tt.
+	a. Open ticket
+	b. close ticket
+		b1. Fix Close
+		b2. Close By WS
+		b3. Close By PR
+		b4. Close By WS-PR
+	c. Eskalasi ticket
+	d. Guidance.
+	e. Report
+	d. Assignment
+perbedaan aplikasi lama dengan yang baru 
+
+
+PM.
+1. Jelaskan Apa itu PM
+2. Jenis Task
+	a. Daily
+	b. Weekly
+	c. M
+	d. Semi Annual
+	e. Annual
+3. Fitur PM
+	a. Publish Task by Server otomatis
+	b. List Task
+		b1. Task dilakukan sesuai jadwal/ time frame
+		b2. jika sudah Task dilakukan maka membutuhkan Approval dari KST pint C
+		b3. jika task expired maka akan tertulis di dashboard.
+	c. Task Approval 
