@@ -56,8 +56,8 @@
 
                               <tr>
                               <td style="width:10%"><img src="<?php echo base_url($data->file) ?>"  style="width: 50px;"></td>
-                                 <td style="width:35%"><?php echo $data->news_name ?></td>
-                                 <td style="width:50%"><?php echo $data->news_description ?></td>
+                                 <td style="width:30%"><?php echo $data->news_name ?></td>
+                                 <td style="width:40%"><?php echo $data->news_description ?></td>
                                  <td style="width:10%"><?php echo $data->news_date ?></td>
                                  <!-- <td><?php echo $data->news_status ?></td> -->
                               </tr>
