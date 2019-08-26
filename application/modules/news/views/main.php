@@ -55,7 +55,7 @@
                            <?php foreach ($promo as $data) { ?>
 
                               <tr>
-                              <td style="width:5%"><a href="<?php echo base_url($data->file) ?>"> <img src="<?php echo base_url('assets/icon/download_file.png') ?>" style="width: 20px;"></a></td>
+                              <td style="width:10%"><img src="<?php echo base_url($data->file) ?>"  style="width: 50px;"></td>
                                  <td style="width:35%"><?php echo $data->news_name ?></td>
                                  <td style="width:50%"><?php echo $data->news_description ?></td>
                                  <td style="width:10%"><?php echo $data->news_date ?></td>
