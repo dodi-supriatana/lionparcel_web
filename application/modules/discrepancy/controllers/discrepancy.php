@@ -23,7 +23,7 @@ class discrepancy extends MX_Controller
             'script_url' => 'main_script'
         );
         $data['perview'] = $this->db->query('SELECT * FROM Perview ')->result();
-        $data['data'] = $this->db->query("SELECT * FROM rate_tabel_history rth WHERE rth.file_name='".$file_name."'")->result();
+        $data['data'] = $this->db->query("SELECT * FROM rate_tabel_history rth WHERE rth.file_name='".$file_name."' Limit 100")->result();
         $data['counting']=$this->db->query("SELECT 
         COUNT(CASE WHEN status = 'add' then 1 ELSE NULL END) as 'add',
         COUNT(CASE WHEN status = 'Update' then 1 ELSE NULL END) as 'update'

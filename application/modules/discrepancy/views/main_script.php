@@ -1,4 +1,4 @@
-<script>	
+<!-- <script>	
 
 	$(document).ready(function() {
 			
@@ -39,6 +39,7 @@
 		    	//"bAutoWidth": false,
 		    	//"bPaginate": false,
 		    	//"bStateSave": true // saves sort state using localStorage
+
 				"processing": false,
                 "serverSide": true,
                 "order": [[ 0, "desc" ]],
@@ -93,4 +94,19 @@
 		
 		})
 
+</script> -->
+
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        lengthMenu: [
+            [ 50,100, -1 ],
+            [ '50 rows','100 rows', 'Show all' ]
+        ],
+        buttons: [
+            'pageLength'
+        ]
+    } );
+} );
 </script>

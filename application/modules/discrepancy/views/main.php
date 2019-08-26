@@ -30,7 +30,7 @@
                <span class="fa fa-download" style="color:#ffff"></span>
             </div>
             <div class="widget-data">
-               <div class="widget-int num-count" style="color:#6c7074"><?php echo $counting->update ?></div>
+               <div class="widget-int num-count" style="color:#6c7074"><?php echo "" . number_format($counting->update,0,',','.')  ?></div>
                <div class="widget-title" style="color:#ffba00">Updated</div>
                <div class="widget-subtitle">collected data
                   <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
@@ -51,7 +51,7 @@
             <span class="fa fa-check" style="color:#ffff"></span>
          </div>
          <div class="widget-data">
-            <div class="widget-int num-count" style="color:#6c7074"><?php echo $counting->add ?></div>
+            <div class="widget-int num-count" style="color:#6c7074"><?php echo "" . number_format( $counting->add,0,',','.') ?></div>
             <div class="widget-title" style="color:#00ca8a">Added</div>
             <div class="widget-subtitle">collected data
                <a href="http://103.77.78.169/dbs/invoice" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="View all Invoice"><span class="label label-primary">View</span></a>
@@ -96,7 +96,7 @@
                      </ul>
                   </div>
                   <div class="panel-body">
-                     <table class="table datatable">
+                     <table class="table datatable" id="example">
                         <thead>
                            <tr>
                               <th>Product</th>
@@ -119,14 +119,14 @@
                                  <td><?php echo $data->product ?></td>
                                  <td><?php echo $data->origin_city ?></td>
                                  <td><?php echo $data->destination_city ?></td>
-                                 <!-- <td><?php echo $data->old_price ?></td> -->
+                                 <!-- <td><?php echo "Rp " . number_format( $data->old_price,0,',','.')?></td> -->
                                  <td><?php if ($data->status != 'add') {
                                                          echo '<span class="label label-success"><i class="fa fa-sort-asc fa-lg" style="color: white;"></i> <b> Updated</b></span>';
                                                       } else {
                                                          echo '<span class="label label-danger">Add</span>';
                                                       } ?></td>
                                  <!-- <td><a data-toggle="tooltip" data-placement="right" title="" data-original-title="View Detail" href="<?php echo base_url() ?>" ><span class="label label-primary" ><i class="glyphicon glyphicon-user"></i></span></a></td> -->
-                                 <td><?php echo $data->total ?></td>                              
+                                 <td>Rp <?php echo  number_format( $data->total,0,',','.') ?></td>                              
                               </tr>
                            <?php } ?>
                         </tbody>
