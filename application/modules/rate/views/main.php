@@ -45,13 +45,13 @@
                         <tbody>
                            <?php foreach ($price as $data) { ?>
                            <tr>
-                              <td><?php echo $data->origin_city ?></td>
-                              <td><?php echo $data->destination_city ?></td>
-                              <td><?php echo $data->product ?></td>
-                              <td><?php echo $data->ss ?></td>
-                              <td><?php echo $data->pr ?></td>
-                              <td><?php echo $data->total ?></td>
-                           <td><a href="<?php echo base_url('ratehistory/detail/'.$data->code) ?>" type="button" class="btn btn-primary btn-xs">View</a></td>
+                              <td width="20"><?php echo $data->origin_city ?></td>
+                              <td width="20"><?php echo $data->destination_city ?></td>
+                              <td width="20"><?php echo $data->product ?></td>
+                              <td width="20"><?php echo "Rp " . number_format($data->ss ,0,',','.') ?></td>
+                              <td width="20"><?php echo "Rp " . number_format($data->pr ,0,',','.') ?></td>
+                              <td width="20"><?php echo "Rp " . number_format($data->total ,0,',','.')?></td>
+                           <td width="20"><a href="<?php echo base_url('ratehistory/detail/'.$data->code) ?>" type="button" class="btn btn-primary btn-xs">View</a></td>
                            </tr>
                            <?php } ?>
 

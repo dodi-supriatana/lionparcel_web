@@ -13,7 +13,7 @@
          <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
             <h1 class="page-title txt-color-blueDark">
                <!-- PAGE HEADER -->
-               <i class="fa-fw fa fa-usd"></i>
+               <i class="fa-fw fa fa-clock-o"></i>
                Upload History
             </h1>
          </div>
@@ -42,6 +42,7 @@
                               <th>Date</th>
                               <th>Document Name</th>
                               <!-- <th>Total Row</th> -->
+                              <th>UPLOADED</th>
                               <th>Updated Data</th>
                               <th>Update by</th>
                               <th>Download Document</th>
@@ -55,6 +56,7 @@
                            <tr>
                               <td><?php echo $key->created_date ?></td>
                               <td><?php echo $key->file_name ?></td>
+                              <td><a class="btn btn-primary btn-xs" href="<?php echo base_url('discrepancy/detail/'.$key->file_name) ?>" >- Rows</a></td>
                               <td><a class="btn btn-primary btn-xs" href="<?php echo base_url('discrepancy/detail/'.$key->file_name) ?>" ><?php echo $key->total_update ?> Rows</a></td>
                               <!-- <td><center>3</center></td> -->
                               <td><?php echo $key->update_by ?></td>
