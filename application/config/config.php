@@ -26,8 +26,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] = 'http://lionparcel.cudo.co.id/';
 
 // $config['base_url'] = 'http://lionparcel.cudo.co.id/';
-$config['base_url'] = 'http://localhost/lionparcel_jolly_rev/';
-
+// $config['base_url'] = 'http://localhost/lionparcel_web/';
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 
 /*
 |--------------------------------------------------------------------------
